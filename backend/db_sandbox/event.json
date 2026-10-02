@@ -1,0 +1,141 @@
+[
+  {
+    "_id": "id-1790933328136-hm4krx307",
+    "title": "Smart India Hackathon (SIH 2026)",
+    "company": "Ministry of Education & AICTE",
+    "type": "Hackathon",
+    "description": "Nationwide initiative providing students a platform to solve pressing problems of ministries, departments, and industries across hardware & software.",
+    "startDate": "2026-10-17T09:28:46.870Z",
+    "endDate": "2026-10-19T09:28:46.870Z",
+    "registrationDeadline": "2026-10-10T09:28:46.870Z",
+    "eligibility": "Engineering & College Students (Teams of 6)",
+    "location": "India",
+    "registrationUrl": "https://sih.gov.in",
+    "source": "AICTE / SIH Portal",
+    "tags": [
+      "GovtOfIndia",
+      "SmartIndia",
+      "Innovation",
+      "HardwareSoftware"
+    ],
+    "prizePool": "₹1,00,000 per problem statement",
+    "createdAt": "2026-10-02T09:28:48.136Z",
+    "updatedAt": "2026-10-02T09:28:48.136Z"
+  },
+  {
+    "_id": "id-1790933328138-e2syhuv1d",
+    "title": "Google Summer of Code (GSoC)",
+    "company": "Google Open Source",
+    "type": "Open Source",
+    "description": "Global online program focused on bringing new contributors into open source software development organizations under 12+ week mentorships.",
+    "startDate": "2026-10-27T09:28:46.870Z",
+    "endDate": "2027-01-05T09:28:46.870Z",
+    "registrationDeadline": "2026-10-14T09:28:46.870Z",
+    "eligibility": "Students & Open Source Beginners (18+)",
+    "location": "Online",
+    "registrationUrl": "https://summerofcode.withgoogle.com",
+    "source": "Google Open Source",
+    "tags": [
+      "Google",
+      "GSoC",
+      "OpenSource",
+      "Stipend",
+      "Mentorship"
+    ],
+    "prizePool": "$1,500 - $3,000 Stipend",
+    "createdAt": "2026-10-02T09:28:48.138Z",
+    "updatedAt": "2026-10-02T09:28:48.138Z"
+  },
+  {
+    "_id": "id-1790933328140-pekvsxgv8",
+    "title": "Amazon ML Summer School",
+    "company": "Amazon Science",
+    "type": "Workshop",
+    "description": "Intensive curriculum covering Deep Learning, Probabilistic Graphical Models, Reinforcement Learning, and Generative AI taught by Amazon scientists.",
+    "startDate": "2026-10-20T09:28:46.870Z",
+    "endDate": "2026-10-24T09:28:46.870Z",
+    "registrationDeadline": "2026-10-08T09:28:46.870Z",
+    "eligibility": "Pre-final & Final Year B.Tech / M.Tech / PhD",
+    "location": "India",
+    "registrationUrl": "https://amazonmlsummerschoolindia.splashthat.com",
+    "source": "Amazon Science",
+    "tags": [
+      "Amazon",
+      "MachineLearning",
+      "Mentorship",
+      "PlacementInterviews"
+    ],
+    "prizePool": "Fast-track SDE & Applied Scientist Interviews",
+    "createdAt": "2026-10-02T09:28:48.140Z",
+    "updatedAt": "2026-10-02T09:28:48.140Z"
+  },
+  {
+    "_id": "id-1790933328141-84nkd3ocg",
+    "title": "Flipkart GRiD 6.0 Campus Challenge",
+    "company": "Flipkart",
+    "type": "Hiring Challenge",
+    "description": "Flagship engineering campus challenge inviting students to solve technical problems in Robotics, Information Security, and E-commerce Generative AI.",
+    "startDate": "2026-10-22T09:28:46.870Z",
+    "endDate": "2026-10-25T09:28:46.870Z",
+    "registrationDeadline": "2026-10-12T09:28:46.870Z",
+    "eligibility": "Engineering Students (Batch 2025, 2026, 2027)",
+    "location": "India",
+    "registrationUrl": "https://unstop.com/competitions/flipkart-grid",
+    "source": "Unstop / Flipkart",
+    "tags": [
+      "Flipkart",
+      "GRiD",
+      "FullTimeOffer",
+      "InternshipPPI"
+    ],
+    "prizePool": "₹5,25,000 & SDE-1 PPIs (32 LPA)",
+    "createdAt": "2026-10-02T09:28:48.141Z",
+    "updatedAt": "2026-10-02T09:28:48.142Z"
+  },
+  {
+    "_id": "id-1790933328143-0yvl38zcw",
+    "title": "JPMorgan Chase Code for Good",
+    "company": "JPMorgan Chase & Co.",
+    "type": "Hackathon",
+    "description": "24-hour virtual hackathon where you collaborate with teammates and JPMC technologists to build tech solutions for non-profit organizations.",
+    "startDate": "2026-11-01T09:28:46.870Z",
+    "endDate": "2026-11-02T09:28:46.870Z",
+    "registrationDeadline": "2026-10-16T09:28:46.870Z",
+    "eligibility": "B.Tech / B.E. Computer Science & IT",
+    "location": "Online",
+    "registrationUrl": "https://careers.jpmorgan.com/us/en/students/programs/code-for-good",
+    "source": "JPMorgan Chase Careers",
+    "tags": [
+      "JPMC",
+      "Fintech",
+      "SocialGood",
+      "SoftwareEngineeringPPI"
+    ],
+    "prizePool": "Full-time Software Engineer Offers",
+    "createdAt": "2026-10-02T09:28:48.143Z",
+    "updatedAt": "2026-10-02T09:28:48.143Z"
+  },
+  {
+    "_id": "id-1790933328146-lj57zbucr",
+    "title": "Meta Hacker Cup 2026",
+    "company": "Meta",
+    "type": "Coding Contest",
+    "description": "Meta's annual global competitive programming competition with rounds of challenging algorithmic and mathematical problems.",
+    "startDate": "2026-11-16T09:28:46.870Z",
+    "endDate": "2026-11-17T09:28:46.870Z",
+    "registrationDeadline": "2026-11-06T09:28:46.870Z",
+    "eligibility": "Open to All Globally",
+    "location": "Online",
+    "registrationUrl": "https://www.facebook.com/codingcompetitions/hacker-cup/",
+    "source": "Meta Competitions",
+    "tags": [
+      "Meta",
+      "HackerCup",
+      "Algorithms",
+      "GlobalRank"
+    ],
+    "prizePool": "$20,000 Grand Prize & Official T-Shirts",
+    "createdAt": "2026-10-02T09:28:48.146Z",
+    "updatedAt": "2026-10-02T09:28:48.146Z"
+  }
+]

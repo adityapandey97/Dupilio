@@ -1,0 +1,113 @@
+[
+  {
+    "_id": "id-1786994417096-uyln9d2n3",
+    "name": "ADITYA PANDEY",
+    "email": "honeypandey409@gmail.com",
+    "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "profile": {
+      "role": "Software Engineer",
+      "skills": [
+        "React",
+        "JavaScript",
+        "C++",
+        "Node.js",
+        "MongoDB"
+      ],
+      "education": "B.Tech IT - NIET",
+      "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating",
+      "codingProfiles": {
+        "leetcode": "aditypandey088",
+        "codeforces": "",
+        "codechef": "",
+        "hackerrank": "",
+        "github": ""
+      },
+      "codingStats": {
+        "leetcodeSolved": 128,
+        "codeforcesSolved": 0,
+        "codechefSolved": 0,
+        "hackerrankSolved": 0,
+        "completedTopics": []
+      }
+    },
+    "createdAt": "2026-08-17T19:20:17.096Z",
+    "updatedAt": "2026-08-29T12:04:27.713Z"
+  },
+  {
+    "_id": "id-1787822539885-zan999zjz",
+    "name": "Aditya Pandey",
+    "email": "aditya@example.com",
+    "password": "$2b$10$qEGOO9Lkkf4frk00worhIOcfCr4PRGmamRrAJ850XPHidt5e0aLB6",
+    "profile": {
+      "role": "Software Engineer",
+      "skills": [
+        "React",
+        "JavaScript",
+        "C++",
+        "Node.js",
+        "MongoDB"
+      ],
+      "education": "B.Tech IT - NIET",
+      "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating"
+    },
+    "createdAt": "2026-08-27T09:22:19.885Z",
+    "updatedAt": "2026-10-02T09:35:00.132Z",
+    "developerScore": {
+      "label": "Dupilio Developer Score",
+      "overall": 44,
+      "dimensions": {
+        "problemSolving": 62,
+        "competitiveProgramming": 20,
+        "consistency": 40,
+        "contestParticipation": 56,
+        "gitHubActivity": 30,
+        "projectActivity": 50
+      },
+      "metricsSummary": {
+        "totalSolved": 218,
+        "maxRating": 0,
+        "totalContests": 14,
+        "currentStreak": 12,
+        "githubStars": 0
+      },
+      "calculatedAt": "2026-10-02T09:35:00.129Z"
+    },
+    "profile.codingProfiles": {
+      "leetcode": "adityapandey088"
+    }
+  },
+  {
+    "_id": "id-1787825847137-yszn0wibh",
+    "name": "Dev Judge",
+    "email": "devjudge@example.com",
+    "password": "$2b$10$43zlH5Qz6txLeeDpUUdBpuhO5Mwu05bmDZLwm.mphtp8HvrzD35qu",
+    "profile": {
+      "role": "Software Engineer",
+      "skills": [
+        "React",
+        "JavaScript",
+        "C++",
+        "Node.js",
+        "MongoDB"
+      ],
+      "education": "B.Tech IT - NIET",
+      "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating",
+      "codingProfiles": {
+        "leetcode": "dev_leetcode",
+        "codeforces": "",
+        "codechef": "",
+        "hackerrank": "",
+        "github": "dev_github"
+      },
+      "codingStats": {
+        "leetcodeSolved": 0,
+        "codeforcesSolved": 0,
+        "codechefSolved": 0,
+        "hackerrankSolved": 0,
+        "completedTopics": []
+      }
+    },
+    "createdAt": "2026-08-27T10:17:27.138Z",
+    "updatedAt": "2026-08-27T10:29:00.914Z"
+  }
+]

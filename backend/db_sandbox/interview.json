@@ -1,0 +1,85 @@
+[
+  {
+    "_id": "id-1787080607473-r1061qyfl",
+    "userId": "id-1786994417096-uyln9d2n3",
+    "interviewName": "DSA Interview",
+    "date": "19/8/2026",
+    "score": 50,
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Can you explain the difference between a tree and a graph, and when you would use each?",
+        "answerText": "[ No answer spoken. ]",
+        "score": 50,
+        "feedback": "Good attempt. To improve, try structure your spoken answer to hit all core requirements cleanly.",
+        "points": [
+          {
+            "pointText": "A tree is a connected acyclic graph with N nodes and N-1 edges.",
+            "matched": false
+          },
+          {
+            "pointText": "Trees have a hierarchical structure with a single root, while graphs can have cycles and multiple paths.",
+            "matched": false
+          },
+          {
+            "pointText": "Trees are useful for representing hierarchical data (like HTML DOM, file systems), while graphs are suited for networks, routing, and relations.",
+            "matched": false
+          }
+        ]
+      },
+      {
+        "questionId": "q2",
+        "questionText": "What is dynamic programming, and how does memoization differ from tabulation?",
+        "answerText": "[ No answer spoken. ]",
+        "score": 50,
+        "feedback": "Good attempt. To improve, try structure your spoken answer to hit all core requirements cleanly.",
+        "points": [
+          {
+            "pointText": "Dynamic programming (DP) solves complex problems by breaking them down into simpler subproblems and storing subproblem results.",
+            "matched": false
+          },
+          {
+            "pointText": "Memoization is top-down, typically using recursion and caching results in a map or array as they are computed.",
+            "matched": false
+          },
+          {
+            "pointText": "Tabulation is bottom-up, filling an iterative table (usually from base cases up) without recursive call stack overhead.",
+            "matched": false
+          }
+        ]
+      },
+      {
+        "questionId": "q3",
+        "questionText": "How does quicksort work, and what is its worst-case time complexity? How can we optimize it?",
+        "answerText": "[ No answer spoken. ]",
+        "score": 50,
+        "feedback": "Good attempt. To improve, try structure your spoken answer to hit all core requirements cleanly.",
+        "points": [
+          {
+            "pointText": "Quicksort is a divide-and-conquer algorithm that selects a pivot and partitions the array around it.",
+            "matched": false
+          },
+          {
+            "pointText": "Worst-case time complexity is O(N^2), occurring when the pivot consistently divides the array unevenly (e.g. sorted arrays with first/last element pivot).",
+            "matched": false
+          },
+          {
+            "pointText": "Optimizations include randomized pivot selection, median-of-three, or switching to insertion sort for small sub-arrays.",
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "strengths": [
+      "Good baseline understanding of foundational theoretical paradigms.",
+      "Structures answers logically with clear descriptions of core concepts."
+    ],
+    "weaknesses": [
+      "Needs more depth on deployment tradeoffs and performance optimizations.",
+      "Could elaborate further on resource constraints and cache invalidation strategies."
+    ],
+    "generalFeedback": "You did a great job covering the basic requirements of the questions. For a stellar performance in your SDE placements, practice structured communication patterns and expand your knowledge on caching lifecycle tradeoffs.",
+    "createdAt": "2026-08-18T19:16:47.474Z",
+    "updatedAt": "2026-08-18T19:16:47.474Z"
+  }
+]

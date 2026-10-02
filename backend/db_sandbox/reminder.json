@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "id-1790933752509-5e9dt95b3",
+    "userId": "id-1787822539885-zan999zjz",
+    "type": "contest",
+    "referenceId": "id-1790933330196-udrnnc7s2",
+    "referenceModel": "Contest",
+    "title": "Codeforces Round 976 (Div. 2)",
+    "message": "Reminder: \"Codeforces Round 976 (Div. 2)\" starts in 30 minutes!",
+    "scheduledAt": "2026-10-03T13:46:46.869Z",
+    "leadTimeMinutes": 30,
+    "channel": "browser",
+    "status": "pending",
+    "metadata": {
+      "targetTime": "2026-10-03T14:16:46.869Z",
+      "recipientPhone": null
+    },
+    "createdAt": "2026-10-02T09:35:52.509Z",
+    "updatedAt": "2026-10-02T09:35:52.509Z"
+  }
+]

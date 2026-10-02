@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.5);
+    border-radius: 4px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(75, 85, 99, 0.5);
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-200 antialiased selection:bg-purple-500 selection:text-white font-sans;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-50;
+  }
+}

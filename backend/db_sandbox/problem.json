@@ -1,0 +1,219 @@
+[
+  {
+    "_id": "two-sum",
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,7,11,15], target = 9",
+        "output": "[0,1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3,2,4], target = 6",
+        "output": "[1,2]"
+      },
+      {
+        "input": "nums = [3,3], target = 6",
+        "output": "[0,1]"
+      }
+    ],
+    "starterCode": {
+      "cpp": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        // Write your C++ code here\n        \n    }\n};",
+      "java": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        // Write your Java code here\n        \n    }\n}",
+      "python": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        # Write your Python code here\n        pass",
+      "javascript": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number[]}\n */\nvar twoSum = function(nums, target) {\n    // Write your JavaScript code here\n    \n};"
+    },
+    "isSolved": false,
+    "platform": "LeetCode",
+    "externalUrl": "https://leetcode.com/problems/two-sum/",
+    "createdAt": "2026-08-27T09:45:54.023Z",
+    "updatedAt": "2026-08-27T09:45:54.024Z"
+  },
+  {
+    "_id": "valid-parentheses",
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "topic": "String",
+    "description": "Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.\n\nAn input string is valid if:\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n3. Every close bracket has a corresponding open bracket of the same type.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only '()[]{}'."
+    ],
+    "examples": [
+      {
+        "input": "s = \"()\"",
+        "output": "true"
+      },
+      {
+        "input": "s = \"()[]{}\"",
+        "output": "true"
+      },
+      {
+        "input": "s = \"(]\"",
+        "output": "false"
+      }
+    ],
+    "starterCode": {
+      "cpp": "class Solution {\npublic:\n    bool isValid(string s) {\n        // Write your C++ code here\n        \n    }\n};",
+      "java": "class Solution {\n    public boolean isValid(String s) {\n        // Write your Java code here\n        \n    }\n}",
+      "python": "class Solution:\n    def isValid(self, s: str) -> bool:\n        # Write your Python code here\n        pass",
+      "javascript": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar isValid = function(s) {\n    // Write your JavaScript code here\n    \n};"
+    },
+    "isSolved": false,
+    "platform": "LeetCode",
+    "externalUrl": "https://leetcode.com/problems/valid-parentheses/",
+    "createdAt": "2026-08-27T09:45:54.026Z",
+    "updatedAt": "2026-08-27T09:45:54.026Z"
+  },
+  {
+    "_id": "reverse-linked-list",
+    "title": "Reverse Linked List",
+    "difficulty": "Easy",
+    "topic": "Linked List",
+    "description": "Given the `head` of a singly linked list, reverse the list, and return the reversed list.",
+    "constraints": [
+      "The number of nodes in the list is the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1,2,3,4,5]",
+        "output": "[5,4,3,2,1]"
+      },
+      {
+        "input": "head = [1,2]",
+        "output": "[2,1]"
+      },
+      {
+        "input": "head = []",
+        "output": "[]"
+      }
+    ],
+    "starterCode": {
+      "cpp": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n *     int val;\n *     ListNode *next;\n *     ListNode() : val(0), next(nullptr) {}\n *     ListNode(x) : val(x), next(nullptr) {}\n *     ListNode(x, ListNode *next) : val(x), next(next) {}\n * };\n */\nclass Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        // Write your C++ code here\n        \n    }\n};",
+      "java": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n *     int val;\n *     ListNode next;\n *     ListNode() {}\n *     ListNode(int val) { this.val = val; }\n *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n * }\n */\nclass Solution {\n    public ListNode reverseList(ListNode head) {\n        // Write your Java code here\n        \n    }\n}",
+      "python": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        # Write your Python code here\n        pass",
+      "javascript": "/**\n * Definition for singly-linked list.\n * function ListNode(val, next) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.next = (next===undefined ? null : next)\n * }\n */\n/**\n * @param {ListNode} head\n * @return {ListNode}\n */\nvar reverseList = function(head) {\n    // Write your JavaScript code here\n    \n};"
+    },
+    "isSolved": false,
+    "platform": "LeetCode",
+    "externalUrl": "https://leetcode.com/problems/reverse-linked-list/",
+    "createdAt": "2026-08-27T09:45:54.028Z",
+    "updatedAt": "2026-08-27T09:45:54.028Z"
+  },
+  {
+    "_id": "binary-tree-inorder-traversal",
+    "title": "Binary Tree Inorder Traversal",
+    "difficulty": "Easy",
+    "topic": "Tree",
+    "description": "Given the `root` of a binary tree, return the inorder traversal of its nodes' values.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1,null,2,3]",
+        "output": "[1,3,2]"
+      },
+      {
+        "input": "root = []",
+        "output": "[]"
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]"
+      }
+    ],
+    "starterCode": {
+      "cpp": "/**\n * Definition for a binary tree node.\n * struct TreeNode {\n *     int val;\n *     TreeNode *left;\n *     TreeNode *right;\n *     TreeNode() : val(0), left(nullptr), right(nullptr) {}\n *     TreeNode(x) : val(x), left(nullptr), right(nullptr) {}\n *     TreeNode(x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}\n * };\n */\nclass Solution {\npublic:\n    vector<int> inorderTraversal(TreeNode* root) {\n        // Write your C++ code here\n        \n    }\n};",
+      "java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public List<Integer> inorderTraversal(TreeNode root) {\n        // Write your Java code here\n        \n    }\n}",
+      "python": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:\n        # Write your Python code here\n        pass",
+      "javascript": "/**\n * Definition for a binary tree node.\n * function TreeNode(val, left, right) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.left = (left===undefined ? null : left)\n *     this.right = (next===undefined ? null : right)\n * }\n */\n/**\n * @param {TreeNode} root\n * @return {number[]}\n */\nvar inorderTraversal = function(root) {\n    // Write your JavaScript code here\n    \n};"
+    },
+    "isSolved": false,
+    "platform": "LeetCode",
+    "externalUrl": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+    "createdAt": "2026-08-27T09:45:54.031Z",
+    "updatedAt": "2026-08-27T09:45:54.031Z"
+  },
+  {
+    "_id": "clone-graph",
+    "title": "Clone Graph",
+    "difficulty": "Medium",
+    "topic": "Graph",
+    "description": "Given a reference of a node in a connected undirected graph.\n\nReturn a deep copy (clone) of the graph.\n\nEach node in the graph contains a value (`int`) and a list (`List[Node]`) of its neighbors.\n\n```\nclass Node {\n    public int val;\n    public List<Node> neighbors;\n}\n```",
+    "constraints": [
+      "The number of nodes in the graph is between 0 and 100.",
+      "1 <= Node.val <= 100",
+      "Node.val is unique for each node.",
+      "There are no repeated edges and no self-loops in the graph.",
+      "The Graph is connected and all nodes can be visited starting from the given node."
+    ],
+    "examples": [
+      {
+        "input": "adjList = [[2,4],[1,3],[2,4],[1,3]]",
+        "output": "[[2,4],[1,3],[2,4],[1,3]]",
+        "explanation": "There are 4 nodes in the graph."
+      }
+    ],
+    "starterCode": {
+      "cpp": "/*\n// Definition for a Node.\nclass Node {\npublic:\n    int val;\n    vector<Node*> neighbors;\n    Node() {\n        val = 0;\n        neighbors = vector<Node*>();\n    }\n    Node(int _val) {\n        val = _val;\n        neighbors = vector<Node*>();\n    }\n    Node(int _val, vector<Node*> _neighbors) {\n        val = _val;\n        neighbors = _neighbors;\n    }\n};\n*/\nclass Solution {\npublic:\n    Node* cloneGraph(Node* node) {\n        // Write your C++ code here\n        \n    }\n};",
+      "java": "/*\n// Definition for a Node.\nclass Node {\n    public int val;\n    public List<Node> neighbors;\n    public Node() {\n        val = 0;\n        neighbors = new ArrayList<Node>();\n    }\n    public Node(int _val) {\n        val = _val;\n        neighbors = new ArrayList<Node>();\n    }\n    public Node(int _val, ArrayList<Node> _neighbors) {\n        val = _val;\n        neighbors = _neighbors;\n    }\n}\n*/\nclass Solution {\n    public Node cloneGraph(Node node) {\n        // Write your Java code here\n        \n    }\n}",
+      "python": "\"\"\"\n# Definition for a Node.\nclass Node:\n    def __init__(self, val = 0, neighbors = None):\n        self.val = val\n        self.neighbors = neighbors if neighbors is not None else []\n\"\"\"\nclass Solution:\n    def cloneGraph(self, node: 'Node') -> 'Node':\n        # Write your Python code here\n        pass",
+      "javascript": "/**\n * // Definition for a Node.\n * function Node(val, neighbors) {\n *    this.val = val === undefined ? 0 : val;\n *    this.neighbors = neighbors === undefined ? [] : neighbors;\n * };\n */\n/**\n * @param {Node} node\n * @return {Node}\n */\nvar cloneGraph = function(node) {\n    // Write your JavaScript code here\n    \n};"
+    },
+    "isSolved": false,
+    "platform": "LeetCode",
+    "externalUrl": "https://leetcode.com/problems/clone-graph/",
+    "createdAt": "2026-08-27T09:45:54.033Z",
+    "updatedAt": "2026-08-27T09:45:54.033Z"
+  },
+  {
+    "_id": "coin-change",
+    "title": "Coin Change",
+    "difficulty": "Medium",
+    "topic": "DP",
+    "description": "You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.\n\nReturn the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`.\n\nYou may assume that you have an infinite number of each kind of coin.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1,2,5], amount = 11",
+        "output": "3",
+        "explanation": "11 = 5 + 5 + 1"
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1"
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0"
+      }
+    ],
+    "starterCode": {
+      "cpp": "class Solution {\npublic:\n    int coinChange(vector<int>& coins, int amount) {\n        // Write your C++ code here\n        \n    }\n};",
+      "java": "class Solution {\n    public int coinChange(int[] coins, int amount) {\n        // Write your Java code here\n        \n    }\n}",
+      "python": "class Solution:\n    def coinChange(self, coins: List[int], amount: int) -> int:\n        # Write your Python code here\n        pass",
+      "javascript": "/**\n * @param {number[]} coins\n * @param {number} amount\n * @return {number}\n */\nvar coinChange = function(coins, amount) {\n    // Write your JavaScript code here\n    \n};"
+    },
+    "isSolved": false,
+    "platform": "LeetCode",
+    "externalUrl": "https://leetcode.com/problems/coin-change/",
+    "createdAt": "2026-08-27T09:45:54.036Z",
+    "updatedAt": "2026-08-27T09:45:54.036Z"
+  }
+]
