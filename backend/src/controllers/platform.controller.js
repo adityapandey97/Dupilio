@@ -19,39 +19,7 @@ export const listSupportedPlatforms = async (req, res, next) => {
 export const getUserPlatforms = async (req, res, next) => {
   try {
     const userId = req.user._id;
-    let profiles = await PlatformProfile.find({ userId });
-
-    // If none exists in PlatformProfile collection yet, check User.profile.codingProfiles for seamless migration!
-    if (profiles.length === 0 && req.user.profile?.codingProfiles) {
-      const codingProfiles = req.user.profile.codingProfiles;
-      const initialSeed = [];
-
-      for (const [platform, username] of Object.entries(codingProfiles)) {
-        if (username && adapters[platform]) {
-          try {
-            const normalized = await adapters[platform].getProfile(username);
-            const saved = await PlatformProfile.create({
-              ...normalized,
-              userId
-            });
-            initialSeed.push(saved);
-          } catch (e) {
-            // fallback entry
-            const saved = await PlatformProfile.create({
-              userId,
-              platform,
-              username,
-              connectionStatus: 'connected',
-              rating: 1400,
-              solved: 65
-            });
-            initialSeed.push(saved);
-          }
-        }
-      }
-      profiles = initialSeed;
-    }
-
+    const profiles = await PlatformProfile.find({ userId });
     res.json({ success: true, count: profiles.length, profiles });
   } catch (err) {
     next(err);
@@ -70,10 +38,22 @@ export const connectPlatform = async (req, res, next) => {
     }
 
     const adapter = getAdapter(platform);
+    if (!adapter) {
+      return res.status(400).json({ success: false, message: `Platform "${platform}" is not supported.` });
+    }
+
     console.log(`🔗 [Platforms] Connecting ${platform} handle "${username}" for user ${req.user.name}`);
 
-    // Fetch live normalized profile
-    const normalized = await adapter.getProfile(username.trim());
+    // Fetch live normalized profile directly from platform
+    let normalized = null;
+    try {
+      normalized = await adapter.getProfile(username.trim());
+    } catch (err) {
+      return res.status(400).json({
+        success: false,
+        message: err.message || `Failed to verify ${platform.toUpperCase()} username "${username}". Please check the handle.`
+      });
+    }
 
     // Upsert into PlatformProfile
     const profile = await PlatformProfile.findOneAndUpdate(
@@ -101,7 +81,7 @@ export const connectPlatform = async (req, res, next) => {
 
     res.json({
       success: true,
-      message: `${platform.toUpperCase()} profile connected and synchronized successfully.`,
+      message: `${platform.toUpperCase()} profile connected and synchronized with live data.`,
       profile
     });
   } catch (err) {
@@ -122,7 +102,15 @@ export const syncPlatform = async (req, res, next) => {
     }
 
     const adapter = getAdapter(platform);
-    const normalized = await adapter.getProfile(existing.username);
+    let normalized = null;
+    try {
+      normalized = await adapter.getProfile(existing.username);
+    } catch (err) {
+      return res.status(400).json({
+        success: false,
+        message: `Failed to refresh ${platform.toUpperCase()} live data: ${err.message}`
+      });
+    }
 
     const updated = await PlatformProfile.findOneAndUpdate(
       { userId, platform: platform.toLowerCase() },
@@ -130,14 +118,14 @@ export const syncPlatform = async (req, res, next) => {
       { new: true }
     );
 
-    // Recalculate score
+    // Recalculate Dupilio Score
     const allUserProfiles = await PlatformProfile.find({ userId });
     const score = calculateDupilioScore(allUserProfiles, {});
     await User.findByIdAndUpdate(userId, { $set: { developerScore: score } });
 
     res.json({
       success: true,
-      message: `${platform} synchronized successfully.`,
+      message: `${platform.toUpperCase()} profile refreshed with real-time stats.`,
       profile: updated
     });
   } catch (err) {
@@ -145,39 +133,39 @@ export const syncPlatform = async (req, res, next) => {
   }
 };
 
-// @desc    Sync all connected platforms for current user
+// @desc    Sync all connected platforms for user
 // @route   POST /api/v1/platforms/sync-all
-export const syncAllUserPlatforms = async (req, res, next) => {
+export const syncAllPlatforms = async (req, res, next) => {
   try {
     const userId = req.user._id;
-    const connected = await PlatformProfile.find({ userId });
-    const updatedProfiles = [];
+    const profiles = await PlatformProfile.find({ userId });
 
-    for (const p of connected) {
-      try {
-        const adapter = adapters[p.platform];
-        if (adapter) {
+    const results = [];
+    for (const p of profiles) {
+      const adapter = adapters[p.platform];
+      if (adapter) {
+        try {
           const normalized = await adapter.getProfile(p.username);
-          const up = await PlatformProfile.findOneAndUpdate(
-            { userId, platform: p.platform },
+          const updated = await PlatformProfile.findOneAndUpdate(
+            { _id: p._id },
             { $set: { ...normalized, connectionStatus: 'connected' } },
             { new: true }
           );
-          updatedProfiles.push(up);
+          results.push(updated);
+        } catch (err) {
+          results.push(p);
         }
-      } catch (err) {
-        console.warn(`[Sync] Platform ${p.platform} failed: ${err.message}`);
-        updatedProfiles.push(p);
       }
     }
 
+    const updatedProfiles = await PlatformProfile.find({ userId });
     const score = calculateDupilioScore(updatedProfiles, {});
     await User.findByIdAndUpdate(userId, { $set: { developerScore: score } });
 
     res.json({
       success: true,
-      message: 'All connected platforms synchronized successfully.',
-      profiles: updatedProfiles,
+      message: `Synchronized ${results.length} connected platforms in real time.`,
+      profiles: results,
       developerScore: score
     });
   } catch (err) {
@@ -185,23 +173,31 @@ export const syncAllUserPlatforms = async (req, res, next) => {
   }
 };
 
-// @desc    Disconnect a platform
+export const syncAllUserPlatforms = syncAllPlatforms;
+
+// @desc    Disconnect a platform profile
 // @route   DELETE /api/v1/platforms/:platform
 export const disconnectPlatform = async (req, res, next) => {
   try {
     const userId = req.user._id;
     const { platform } = req.params;
 
-    await PlatformProfile.deleteOne({ userId, platform: platform.toLowerCase() });
+    await PlatformProfile.deleteMany({ userId, platform: platform.toLowerCase() });
 
     const user = await User.findById(userId);
     if (user && user.profile?.codingProfiles) {
-      const current = { ...user.profile.codingProfiles };
-      delete current[platform.toLowerCase()];
-      await User.findByIdAndUpdate(userId, { $set: { 'profile.codingProfiles': current } });
+      delete user.profile.codingProfiles[platform.toLowerCase()];
+      const allUserProfiles = await PlatformProfile.find({ userId });
+      const score = calculateDupilioScore(allUserProfiles, {});
+      await User.findByIdAndUpdate(userId, {
+        $set: {
+          'profile.codingProfiles': user.profile.codingProfiles,
+          developerScore: score
+        }
+      });
     }
 
-    res.json({ success: true, message: `${platform} disconnected successfully.` });
+    res.json({ success: true, message: `${platform.toUpperCase()} disconnected.` });
   } catch (err) {
     next(err);
   }
@@ -212,6 +208,6 @@ export default {
   getUserPlatforms,
   connectPlatform,
   syncPlatform,
-  syncAllUserPlatforms,
+  syncAllPlatforms,
   disconnectPlatform
 };

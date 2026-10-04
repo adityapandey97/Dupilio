@@ -10,12 +10,13 @@
     "scheduledAt": "2026-10-03T13:46:46.869Z",
     "leadTimeMinutes": 30,
     "channel": "browser",
-    "status": "pending",
+    "status": "triggered",
     "metadata": {
       "targetTime": "2026-10-03T14:16:46.869Z",
       "recipientPhone": null
     },
     "createdAt": "2026-10-02T09:35:52.509Z",
-    "updatedAt": "2026-10-02T09:35:52.509Z"
+    "updatedAt": "2026-10-03T13:47:00.022Z",
+    "triggeredAt": "2026-10-03T13:47:00.005Z"
   }
 ]

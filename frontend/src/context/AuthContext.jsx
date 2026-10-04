@@ -5,13 +5,13 @@ const AuthContext = createContext();
 
 const GUEST_USER = {
   id: 'guest-preview',
-  name: 'Developer (Preview)',
-  email: 'preview@dupilio.dev',
+  name: 'Developer',
+  email: 'developer@dupilio.dev',
   isGuest: true,
   college: 'National Institute of Technology',
   department: 'Computer Science & Engineering',
   batch: '2026',
-  bio: 'Building scalable software & competing across LeetCode, Codeforces, and CodeChef.',
+  bio: 'Connect coding handles to sync real-time ratings, problems solved, and contest calendars.',
   privacySettings: {
     profileVisibility: 'public',
     showRank: true,
@@ -19,38 +19,30 @@ const GUEST_USER = {
     showEmail: false
   },
   developerScore: {
-    overall: 74,
+    overall: 0,
     dimensions: {
-      problemSolving: 78,
-      competitiveProgramming: 72,
-      consistency: 70,
-      contestParticipation: 68,
-      gitHubActivity: 80,
-      projectActivity: 75
+      problemSolving: 0,
+      competitiveProgramming: 0,
+      consistency: 0,
+      contestParticipation: 0,
+      gitHubActivity: 0,
+      projectActivity: 0
     }
   },
   profile: {
-    role: 'Full-Stack Developer & Competitive Programmer',
-    skills: ['DSA', 'React', 'JavaScript', 'Node.js', 'C++', 'System Design', 'FastAPI'],
+    role: 'Software Developer',
+    skills: ['DSA', 'React', 'Node.js', 'C++'],
     education: 'B.Tech Computer Science & Engineering',
     achievements: 'Dupilio Unified Developer',
-    codingProfiles: {
-      leetcode: 'aditya_lc',
-      codeforces: 'tourist_fan',
-      codechef: 'chef_aditya',
-      hackerrank: 'aditya_hr',
-      gfg: 'aditya_gfg',
-      atcoder: 'aditya_ac',
-      github: 'adityapandey97'
-    },
+    codingProfiles: {},
     codingStats: {
-      leetcodeSolved: 218,
-      codeforcesSolved: 94,
-      codechefSolved: 68,
-      hackerrankSolved: 54,
-      gfgSolved: 85,
-      atcoderSolved: 48,
-      completedTopics: ['Arrays', 'Two Pointers', 'Sliding Window', 'Binary Search', 'Trees']
+      leetcodeSolved: 0,
+      codeforcesSolved: 0,
+      codechefSolved: 0,
+      hackerrankSolved: 0,
+      gfgSolved: 0,
+      atcoderSolved: 0,
+      completedTopics: []
     }
   }
 };
@@ -61,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const checkUser = async () => {
-      const token = localStorage.getItem('dupilio_token') || localStorage.getItem('hireprep_token');
+      const token = localStorage.getItem('dupilio_token');
       if (token) {
         try {
           const res = await api.getMe();
@@ -75,7 +67,7 @@ export const AuthProvider = ({ children }) => {
           setUser(GUEST_USER);
         }
       } else {
-        const storedUser = localStorage.getItem('dupilio_user') || localStorage.getItem('hireprep_current_user');
+        const storedUser = localStorage.getItem('dupilio_user');
         if (storedUser) {
           try {
             setUser(JSON.parse(storedUser));
@@ -120,31 +112,41 @@ export const AuthProvider = ({ children }) => {
     setUser(GUEST_USER);
   };
 
-  const updateProfile = async (profileData) => {
-    try {
-      const res = await api.updateProfile(profileData);
-      if (res.user) {
-        setUser(res.user);
-        localStorage.setItem('dupilio_user', JSON.stringify(res.user));
-      }
-    } catch (e) {
-      console.error('Failed to update profile:', e.message);
-    }
+  const updateProfile = (updatedFields) => {
+    setUser((prev) => {
+      const updated = {
+        ...prev,
+        ...updatedFields,
+        privacySettings: {
+          ...prev.privacySettings,
+          ...(updatedFields.privacySettings || {})
+        },
+        profile: {
+          ...prev.profile,
+          ...(updatedFields.profile || {})
+        }
+      };
+      localStorage.setItem('dupilio_user', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, updateProfile }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        login,
+        register,
+        logout,
+        updateProfile
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
+export const useAuth = () => useContext(AuthContext);
 
 export default AuthContext;

@@ -6,41 +6,70 @@ export class CodeforcesAdapter extends PlatformAdapter {
   }
 
   async getProfile(username) {
-    if (!username) throw new Error('Codeforces username is required');
+    if (!username || !username.trim()) {
+      throw new Error('Codeforces username is required');
+    }
 
-    let rating = 1420;
-    let rank = 'Specialist';
-    let solved = 94;
-    let contests = 12;
+    const cleanUsername = username.trim();
+
+    // 1. Fetch user info
+    const infoRes = await this.fetchWithTimeout(`https://codeforces.com/api/user.info?handles=${cleanUsername}`, {}, 5000);
+    if (!infoRes.ok) {
+      throw new Error(`Codeforces request failed with status ${infoRes.status}`);
+    }
+
+    const infoData = await infoRes.json();
+    if (infoData.status !== 'OK' || !Array.isArray(infoData.result) || !infoData.result[0]) {
+      throw new Error(`Codeforces user "${cleanUsername}" does not exist.`);
+    }
+
+    const user = infoData.result[0];
+    const rating = user.rating || 0;
+    const maxRating = user.maxRating || rating;
+    const rank = user.rank ? (user.rank.charAt(0).toUpperCase() + user.rank.slice(1)) : (rating === 0 ? 'Unrated' : 'Newbie');
+
+    // 2. Fetch rating history for exact contest count
+    let contestsCount = 0;
+    try {
+      const ratingRes = await this.fetchWithTimeout(`https://codeforces.com/api/user.rating?handle=${cleanUsername}`, {}, 5000);
+      if (ratingRes.ok) {
+        const ratingData = await ratingRes.json();
+        if (ratingData.status === 'OK' && Array.isArray(ratingData.result)) {
+          contestsCount = ratingData.result.length;
+        }
+      }
+    } catch (e) {
+      // non-critical
+    }
+
+    // 3. Fetch submissions for exact problems solved and difficulty breakdown
+    let solvedCount = 0;
+    let easyCount = 0;
+    let mediumCount = 0;
+    let hardCount = 0;
     let recentActivity = [];
 
     try {
-      // 1. Fetch user info
-      const infoRes = await this.fetchWithTimeout(`https://codeforces.com/api/user.info?handles=${username}`, {}, 4500);
-      if (infoRes.ok) {
-        const infoData = await infoRes.json();
-        if (infoData.status === 'OK' && Array.isArray(infoData.result) && infoData.result[0]) {
-          const user = infoData.result[0];
-          rating = user.rating || user.maxRating || 1200;
-          rank = user.rank ? (user.rank.charAt(0).toUpperCase() + user.rank.slice(1)) : 'Pupil';
-        }
-      }
-
-      // 2. Fetch submissions to count unique problems solved
-      const statusRes = await this.fetchWithTimeout(`https://codeforces.com/api/user.status?handle=${username}&from=1&count=200`, {}, 4500);
+      const statusRes = await this.fetchWithTimeout(`https://codeforces.com/api/user.status?handle=${cleanUsername}&from=1&count=2000`, {}, 6000);
       if (statusRes.ok) {
         const statusData = await statusRes.json();
         if (statusData.status === 'OK' && Array.isArray(statusData.result)) {
           const solvedSet = new Set();
-          const recent = [];
 
           statusData.result.forEach(sub => {
             if (sub.verdict === 'OK' && sub.problem) {
               const pId = `${sub.problem.contestId || ''}${sub.problem.index || ''}`;
-              solvedSet.add(pId);
+              if (!solvedSet.has(pId)) {
+                solvedSet.add(pId);
+                const probRating = sub.problem.rating || 1000;
+                if (probRating < 1300) easyCount++;
+                else if (probRating < 1800) mediumCount++;
+                else hardCount++;
+              }
             }
-            if (recent.length < 5 && sub.problem) {
-              recent.push({
+
+            if (recentActivity.length < 5 && sub.problem) {
+              recentActivity.push({
                 title: `${sub.problem.index} - ${sub.problem.name}`,
                 status: sub.verdict === 'OK' ? 'Accepted' : sub.verdict,
                 timestamp: new Date(sub.creationTimeSeconds * 1000).toISOString()
@@ -48,36 +77,33 @@ export class CodeforcesAdapter extends PlatformAdapter {
             }
           });
 
-          if (solvedSet.size > 0) {
-            solved = solvedSet.size;
-          }
-          if (recent.length > 0) {
-            recentActivity = recent;
-          }
+          solvedCount = solvedSet.size;
         }
       }
-    } catch (err) {
-      console.warn(`[CodeforcesAdapter] API fetch failed for ${username}: ${err.message}. Using cache fallback.`);
+    } catch (e) {
+      console.warn(`[CodeforcesAdapter] Status fetch warning for ${cleanUsername}: ${e.message}`);
     }
 
     return this.normalizeProfile({
-      username,
+      username: cleanUsername,
       rating,
       rank,
-      solved,
-      contests,
-      badges: Math.max(1, Math.round(rating / 400)),
-      streak: 9,
-      profileUrl: `https://codeforces.com/profile/${username}`,
+      solved: solvedCount,
+      contests: contestsCount,
+      badges: rating >= 2400 ? 5 : rating >= 1900 ? 4 : rating >= 1600 ? 3 : rating >= 1400 ? 2 : rating > 0 ? 1 : 0,
+      streak: 0,
+      profileUrl: `https://codeforces.com/profile/${cleanUsername}`,
       difficultyBreakdown: {
-        easy: Math.round(solved * 0.55),
-        medium: Math.round(solved * 0.35),
-        hard: Math.max(2, solved - Math.round(solved * 0.55) - Math.round(solved * 0.35))
+        easy: easyCount,
+        medium: mediumCount,
+        hard: hardCount
       },
-      recentActivity: recentActivity.length > 0 ? recentActivity : [
-        { title: '1941C - Rudolf and the Ugly String', status: 'Accepted', timestamp: new Date(Date.now() - 3600000 * 12).toISOString() },
-        { title: '1941D - Rudolf and the Ball Game', status: 'Accepted', timestamp: new Date(Date.now() - 3600000 * 36).toISOString() }
-      ]
+      recentActivity,
+      rawStats: {
+        maxRating,
+        contribution: user.contribution || 0,
+        friendOfCount: user.friendOfCount || 0
+      }
     });
   }
 
@@ -99,60 +125,35 @@ export class CodeforcesAdapter extends PlatformAdapter {
         if (data.status === 'OK' && Array.isArray(data.result)) {
           const upcoming = data.result
             .filter(c => c.phase === 'BEFORE')
-            .slice(0, 5)
-            .map(c => {
-              const start = new Date(c.startTimeSeconds * 1000);
-              const durationMins = Math.round(c.durationSeconds / 60);
-              const end = new Date(start.getTime() + c.durationSeconds * 1000);
+            .sort((a, b) => a.startTimeSeconds - b.startTimeSeconds);
 
-              return {
-                title: c.name,
-                platform: 'codeforces',
-                externalContestId: `cf-${c.id}`,
-                startTime: start.toISOString(),
-                endTime: end.toISOString(),
-                durationMinutes: durationMins,
-                registrationUrl: `https://codeforces.com/contestRegistration/${c.id}`,
-                contestUrl: `https://codeforces.com/contests/${c.id}`,
-                status: 'upcoming',
-                ratingRange: c.name.includes('Div. 3') ? 'Rating < 1600' : c.name.includes('Div. 2') ? 'Rating < 2100' : 'Div. 1 + 2'
-              };
-            });
-
-          if (upcoming.length > 0) return upcoming;
+          return upcoming.map(c => ({
+            title: c.name,
+            platform: 'codeforces',
+            externalContestId: `cf-${c.id}`,
+            startTime: new Date(c.startTimeSeconds * 1000).toISOString(),
+            endTime: new Date((c.startTimeSeconds + c.durationSeconds) * 1000).toISOString(),
+            durationMinutes: Math.round(c.durationSeconds / 60),
+            registrationUrl: `https://codeforces.com/contestRegistration/${c.id}`,
+            contestUrl: `https://codeforces.com/contest/${c.id}`,
+            status: 'upcoming',
+            ratingRange: c.name.includes('Div. 1') && c.name.includes('Div. 2')
+              ? 'All Ratings'
+              : c.name.includes('Div. 3')
+              ? 'Rating < 1600'
+              : c.name.includes('Div. 4')
+              ? 'Rating < 1400'
+              : c.name.includes('Div. 2')
+              ? 'Rating < 2100'
+              : 'Div. 1 (Rating >= 1900)',
+            phase: c.phase
+          }));
         }
       }
     } catch (err) {
-      console.warn(`[CodeforcesAdapter] Contests fetch failed: ${err.message}`);
+      console.warn(`[CodeforcesAdapter] Failed to fetch real upcoming contests: ${err.message}`);
     }
-
-    // High-fidelity fallback
-    return [
-      {
-        title: 'Codeforces Round (Div. 3)',
-        platform: 'codeforces',
-        externalContestId: 'cf-upcoming-div3',
-        startTime: new Date(Date.now() + 86400000 * 1.5).toISOString(),
-        endTime: new Date(Date.now() + 86400000 * 1.5 + 8100000).toISOString(),
-        durationMinutes: 135,
-        registrationUrl: 'https://codeforces.com/contests',
-        contestUrl: 'https://codeforces.com/contests',
-        status: 'upcoming',
-        ratingRange: 'Rating < 1600'
-      },
-      {
-        title: 'Codeforces Round (Div. 2)',
-        platform: 'codeforces',
-        externalContestId: 'cf-upcoming-div2',
-        startTime: new Date(Date.now() + 86400000 * 4).toISOString(),
-        endTime: new Date(Date.now() + 86400000 * 4 + 7200000).toISOString(),
-        durationMinutes: 120,
-        registrationUrl: 'https://codeforces.com/contests',
-        contestUrl: 'https://codeforces.com/contests',
-        status: 'upcoming',
-        ratingRange: 'Rating < 2100'
-      }
-    ];
+    return [];
   }
 }
 

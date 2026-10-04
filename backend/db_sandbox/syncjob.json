@@ -18,5 +18,169 @@
     "itemsProcessed": 10,
     "createdAt": "2026-10-02T09:31:09.186Z",
     "updatedAt": "2026-10-02T09:31:09.186Z"
+  },
+  {
+    "_id": "id-1790935201141-axagnh3so",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-02T10:00:00.007Z",
+    "completedAt": "2026-10-02T10:00:01.140Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-02T10:00:01.141Z",
+    "updatedAt": "2026-10-02T10:00:01.141Z"
+  },
+  {
+    "_id": "id-1790962201190-ikl3y9kwo",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-02T17:30:00.016Z",
+    "completedAt": "2026-10-02T17:30:01.188Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-02T17:30:01.191Z",
+    "updatedAt": "2026-10-02T17:30:01.191Z"
+  },
+  {
+    "_id": "id-1790964000871-eyl2hx40n",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-02T18:00:00.017Z",
+    "completedAt": "2026-10-02T18:00:00.870Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-02T18:00:00.872Z",
+    "updatedAt": "2026-10-02T18:00:00.872Z"
+  },
+  {
+    "_id": "id-1790965800772-4ou8d81rl",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-02T18:30:00.018Z",
+    "completedAt": "2026-10-02T18:30:00.771Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-02T18:30:00.772Z",
+    "updatedAt": "2026-10-02T18:30:00.772Z"
+  },
+  {
+    "_id": "id-1791012601211-8yj3421u8",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T07:30:00.024Z",
+    "completedAt": "2026-10-03T07:30:01.207Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T07:30:01.212Z",
+    "updatedAt": "2026-10-03T07:30:01.212Z"
+  },
+  {
+    "_id": "id-1791016201031-pa4y2qqg8",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T08:30:00.016Z",
+    "completedAt": "2026-10-03T08:30:01.029Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T08:30:01.031Z",
+    "updatedAt": "2026-10-03T08:30:01.031Z"
+  },
+  {
+    "_id": "id-1791019802238-9nbmxu0se",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T09:30:00.010Z",
+    "completedAt": "2026-10-03T09:30:02.228Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T09:30:02.238Z",
+    "updatedAt": "2026-10-03T09:30:02.238Z"
+  },
+  {
+    "_id": "id-1791032400961-e2ij3ioc5",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T13:00:00.015Z",
+    "completedAt": "2026-10-03T13:00:00.959Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T13:00:00.961Z",
+    "updatedAt": "2026-10-03T13:00:00.961Z"
+  },
+  {
+    "_id": "id-1791036000841-ugr8g5ex2",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T14:00:00.018Z",
+    "completedAt": "2026-10-03T14:00:00.839Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T14:00:00.841Z",
+    "updatedAt": "2026-10-03T14:00:00.841Z"
+  },
+  {
+    "_id": "id-1791037800851-3xxiinlsf",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T14:30:00.024Z",
+    "completedAt": "2026-10-03T14:30:00.851Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T14:30:00.851Z",
+    "updatedAt": "2026-10-03T14:30:00.851Z"
+  },
+  {
+    "_id": "id-1791041400755-eaayfdhnc",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T15:30:00.013Z",
+    "completedAt": "2026-10-03T15:30:00.754Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T15:30:00.755Z",
+    "updatedAt": "2026-10-03T15:30:00.755Z"
+  },
+  {
+    "_id": "id-1791043205090-19expksz9",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T16:00:00.021Z",
+    "completedAt": "2026-10-03T16:00:05.089Z",
+    "itemsProcessed": 7,
+    "createdAt": "2026-10-03T16:00:05.091Z",
+    "updatedAt": "2026-10-03T16:00:05.091Z"
+  },
+  {
+    "_id": "id-1791059400818-qsbw95zga",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T20:30:00.022Z",
+    "completedAt": "2026-10-03T20:30:00.817Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T20:30:00.818Z",
+    "updatedAt": "2026-10-03T20:30:00.818Z"
+  },
+  {
+    "_id": "id-1791061200756-h9618s9n4",
+    "jobType": "contests",
+    "status": "completed",
+    "startedAt": "2026-10-03T21:00:00.004Z",
+    "completedAt": "2026-10-03T21:00:00.756Z",
+    "itemsProcessed": 10,
+    "createdAt": "2026-10-03T21:00:00.757Z",
+    "updatedAt": "2026-10-03T21:00:00.757Z"
+  },
+  {
+    "_id": "id-1791094815470-vrb69ij23",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 15,
+      "startedAt": "2026-10-04T06:20:12.426Z",
+      "completedAt": "2026-10-04T06:20:15.463Z"
+    },
+    "createdAt": "2026-10-04T06:20:15.470Z",
+    "updatedAt": "2026-10-04T06:20:15.470Z"
+  },
+  {
+    "_id": "id-1791095425527-xt9d8l8ry",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 15,
+      "startedAt": "2026-10-04T06:30:23.073Z",
+      "completedAt": "2026-10-04T06:30:25.525Z"
+    },
+    "createdAt": "2026-10-04T06:30:25.527Z",
+    "updatedAt": "2026-10-04T06:30:25.527Z"
   }
 ]

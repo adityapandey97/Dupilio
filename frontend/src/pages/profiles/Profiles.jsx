@@ -62,24 +62,26 @@ export const Profiles = () => {
       setUsernameInput('');
       setConnectModalOpen(false);
     } catch (err) {
-      setStatusMessage(`Error: ${err.message}`);
+      const msg = err.response?.data?.message || err.message || 'Failed to connect platform';
+      setStatusMessage(`❌ ${msg}`);
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setStatusMessage(''), 4000);
+      setTimeout(() => setStatusMessage(''), 5000);
     }
   };
 
   const handleSyncSingle = async (platform) => {
     setSyncingPlatform(platform);
     try {
-      await api.syncPlatform(platform);
+      const res = await api.syncPlatform(platform);
       await loadProfiles();
-      setStatusMessage(`✅ ${platform.toUpperCase()} synchronized.`);
+      setStatusMessage(`✅ ${platform.toUpperCase()} synchronized with live platform data.`);
     } catch (e) {
-      setStatusMessage(`⚠️ ${platform.toUpperCase()} synchronized using cache.`);
+      const msg = e.response?.data?.message || e.message || 'Sync failed';
+      setStatusMessage(`⚠️ ${platform.toUpperCase()}: ${msg}`);
     } finally {
       setSyncingPlatform(null);
-      setTimeout(() => setStatusMessage(''), 3000);
+      setTimeout(() => setStatusMessage(''), 4000);
     }
   };
 

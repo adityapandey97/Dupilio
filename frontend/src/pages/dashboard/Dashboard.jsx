@@ -171,11 +171,13 @@ export const Dashboard = () => {
             </div>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
-                {developerScore?.overall || 74}
+                {developerScore?.overall ?? 0}
               </span>
               <span className="text-slate-400 font-bold text-sm">/ 100</span>
             </div>
-            <p className="text-[11px] text-slate-400 mt-0.5">Top 8% among peers</p>
+            <p className="text-[11px] text-slate-400 mt-0.5">
+              {(developerScore?.overall ?? 0) > 0 ? 'Verified profile index' : 'Connect profiles to compute score'}
+            </p>
           </div>
 
           <div className="h-12 w-px bg-white/10 hidden sm:block"></div>
@@ -215,12 +217,12 @@ export const Dashboard = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
-            { label: 'Problem Solving', score: dimensions.problemSolving || 78, icon: Code2, color: 'text-indigo-600' },
-            { label: 'Competitive Prog.', score: dimensions.competitiveProgramming || 72, icon: Swords, color: 'text-sky-600' },
-            { label: 'Consistency', score: dimensions.consistency || 70, icon: Flame, color: 'text-amber-500' },
-            { label: 'Contest Attendance', score: dimensions.contestParticipation || 68, icon: Trophy, color: 'text-purple-600' },
-            { label: 'GitHub Activity', score: dimensions.gitHubActivity || 80, icon: GitBranch, color: 'text-emerald-600' },
-            { label: 'Project Depth', score: dimensions.projectActivity || 75, icon: Layers, color: 'text-pink-600' }
+            { label: 'Problem Solving', score: dimensions.problemSolving ?? 0, icon: Code2, color: 'text-indigo-600' },
+            { label: 'Competitive Prog.', score: dimensions.competitiveProgramming ?? 0, icon: Swords, color: 'text-sky-600' },
+            { label: 'Consistency', score: dimensions.consistency ?? 0, icon: Flame, color: 'text-amber-500' },
+            { label: 'Contest Attendance', score: dimensions.contestParticipation ?? 0, icon: Trophy, color: 'text-purple-600' },
+            { label: 'GitHub Activity', score: (dimensions.githubActivity ?? dimensions.gitHubActivity ?? 0), icon: GitBranch, color: 'text-emerald-600' },
+            { label: 'Project Depth', score: dimensions.projectActivity ?? 0, icon: Layers, color: 'text-pink-600' }
           ].map((dim, idx) => (
             <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 text-left">
               <div className="flex items-center justify-between mb-1.5">
@@ -343,45 +345,63 @@ export const Dashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {platformProfiles.map(profile => (
-            <Card
-              key={profile.platform}
-              className="p-5 border-slate-200/80 dark:border-slate-800/80 hover:shadow-lg transition-all cursor-pointer group"
-              onClick={() => setSelectedPlatform(profile)}
-            >
-              <div className="flex items-center justify-between mb-3">
-                <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${platformBadgeColors[profile.platform] || 'bg-slate-100 text-slate-700'}`}>
-                  {profile.platform}
-                </span>
-                <span className="text-[10px] text-slate-400 font-mono">
-                  {profile.connectionStatus === 'connected' ? '● Synced' : '○ Pending'}
-                </span>
+          {platformProfiles.length === 0 ? (
+            <div className="col-span-full p-8 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-800 text-center bg-slate-50/50 dark:bg-slate-900/30">
+              <div className="mx-auto w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-3">
+                <Layers size={24} />
               </div>
-
-              <div className="space-y-1">
-                <p className="text-xs text-slate-400">Handle</p>
-                <p className="text-base font-bold text-slate-900 dark:text-white truncate">
-                  @{profile.username}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-left">
-                <div>
-                  <span className="text-[11px] text-slate-400 block">{profile.platform === 'github' ? 'Repos' : 'Solved'}</span>
-                  <span className="text-lg font-extrabold text-slate-900 dark:text-white">{profile.solved}</span>
+              <h3 className="text-base font-bold text-slate-900 dark:text-white">No coding profiles connected yet</h3>
+              <p className="text-xs text-slate-500 max-w-md mx-auto mt-1 mb-4">
+                Connect your real LeetCode, Codeforces, CodeChef, HackerRank, AtCoder, or GitHub usernames to sync real-time ratings, problems solved, badges, and contest standings.
+              </p>
+              <Link
+                to="/profiles"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md shadow-indigo-600/20 transition-all"
+              >
+                <Plus size={14} /> Connect Your First Platform
+              </Link>
+            </div>
+          ) : (
+            platformProfiles.map(profile => (
+              <Card
+                key={profile.platform}
+                className="p-5 border-slate-200/80 dark:border-slate-800/80 hover:shadow-lg transition-all cursor-pointer group"
+                onClick={() => setSelectedPlatform(profile)}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${platformBadgeColors[profile.platform] || 'bg-slate-100 text-slate-700'}`}>
+                    {profile.platform}
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-mono">
+                    {profile.connectionStatus === 'connected' ? '● Synced' : '○ Pending'}
+                  </span>
                 </div>
-                <div>
-                  <span className="text-[11px] text-slate-400 block">{profile.platform === 'github' ? 'Velocity' : 'Rating'}</span>
-                  <span className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400">{profile.rating || 'N/A'}</span>
-                </div>
-              </div>
 
-              <div className="mt-3 flex items-center justify-between text-xs text-indigo-600 dark:text-indigo-400 font-semibold group-hover:translate-x-0.5 transition-transform">
-                <span>View Analytics</span>
-                <ChevronRight size={14} />
-              </div>
-            </Card>
-          ))}
+                <div className="space-y-1">
+                  <p className="text-xs text-slate-400">Handle</p>
+                  <p className="text-base font-bold text-slate-900 dark:text-white truncate">
+                    @{profile.username}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-left">
+                  <div>
+                    <span className="text-[11px] text-slate-400 block">{profile.platform === 'github' ? 'Repos' : 'Solved'}</span>
+                    <span className="text-lg font-extrabold text-slate-900 dark:text-white">{profile.solved}</span>
+                  </div>
+                  <div>
+                    <span className="text-[11px] text-slate-400 block">{profile.platform === 'github' ? 'Velocity' : 'Rating'}</span>
+                    <span className="text-lg font-extrabold text-indigo-600 dark:text-indigo-400">{profile.rating || 'N/A'}</span>
+                  </div>
+                </div>
+
+                <div className="mt-3 flex items-center justify-between text-xs text-indigo-600 dark:text-indigo-400 font-semibold group-hover:translate-x-0.5 transition-transform">
+                  <span>View Analytics</span>
+                  <ChevronRight size={14} />
+                </div>
+              </Card>
+            ))
+          )}
         </div>
       </div>
 

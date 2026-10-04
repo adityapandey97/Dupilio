@@ -31,7 +31,27 @@
       }
     },
     "createdAt": "2026-08-17T19:20:17.096Z",
-    "updatedAt": "2026-08-29T12:04:27.713Z"
+    "updatedAt": "2026-10-02T18:30:00.885Z",
+    "developerScore": {
+      "label": "Dupilio Developer Score",
+      "overall": 42,
+      "dimensions": {
+        "problemSolving": 62,
+        "competitiveProgramming": 20,
+        "consistency": 40,
+        "contestParticipation": 45,
+        "gitHubActivity": 30,
+        "projectActivity": 50
+      },
+      "metricsSummary": {
+        "totalSolved": 218,
+        "maxRating": 0,
+        "totalContests": 0,
+        "currentStreak": 12,
+        "githubStars": 0
+      },
+      "calculatedAt": "2026-10-02T18:30:00.885Z"
+    }
   },
   {
     "_id": "id-1787822539885-zan999zjz",
@@ -51,26 +71,19 @@
       "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating"
     },
     "createdAt": "2026-08-27T09:22:19.885Z",
-    "updatedAt": "2026-10-02T09:35:00.132Z",
+    "updatedAt": "2026-10-04T06:33:08.538Z",
     "developerScore": {
       "label": "Dupilio Developer Score",
-      "overall": 44,
+      "overall": 2,
       "dimensions": {
-        "problemSolving": 62,
-        "competitiveProgramming": 20,
-        "consistency": 40,
-        "contestParticipation": 56,
-        "gitHubActivity": 30,
-        "projectActivity": 50
+        "problemSolving": 0,
+        "competitiveProgramming": 0,
+        "contestParticipation": 0,
+        "consistency": 0,
+        "githubActivity": 0,
+        "projectActivity": 20
       },
-      "metricsSummary": {
-        "totalSolved": 218,
-        "maxRating": 0,
-        "totalContests": 14,
-        "currentStreak": 12,
-        "githubStars": 0
-      },
-      "calculatedAt": "2026-10-02T09:35:00.129Z"
+      "calculatedAt": "2026-10-04T06:33:08.536Z"
     },
     "profile.codingProfiles": {
       "leetcode": "adityapandey088"
@@ -108,6 +121,26 @@
       }
     },
     "createdAt": "2026-08-27T10:17:27.138Z",
-    "updatedAt": "2026-08-27T10:29:00.914Z"
+    "updatedAt": "2026-10-02T18:30:02.701Z",
+    "developerScore": {
+      "label": "Dupilio Developer Score",
+      "overall": 56,
+      "dimensions": {
+        "problemSolving": 62,
+        "competitiveProgramming": 20,
+        "consistency": 60,
+        "contestParticipation": 45,
+        "gitHubActivity": 98,
+        "projectActivity": 78
+      },
+      "metricsSummary": {
+        "totalSolved": 218,
+        "maxRating": 0,
+        "totalContests": 0,
+        "currentStreak": 18,
+        "githubStars": 28
+      },
+      "calculatedAt": "2026-10-02T18:30:02.701Z"
+    }
   }
 ]

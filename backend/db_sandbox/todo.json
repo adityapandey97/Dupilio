@@ -1,0 +1,69 @@
+[
+  {
+    "_id": "id-1790934997289-548mc5a2w",
+    "userId": "id-1787822539885-zan999zjz",
+    "title": "Solve 3 Dynamic Programming problems (Coin Change & LIS)",
+    "description": "Focus on identifying optimal substructure and state formulation.",
+    "priority": "high",
+    "dueDate": "2026-10-03T09:56:37.288Z",
+    "category": "DSA",
+    "tags": [
+      "DP",
+      "Placement",
+      "Medium"
+    ],
+    "isCompleted": true,
+    "createdAt": "2026-10-02T09:56:37.289Z",
+    "updatedAt": "2026-10-02T09:56:49.527Z",
+    "completedAt": "2026-10-02T09:56:49.526Z"
+  },
+  {
+    "_id": "id-1790934997292-vwgvcfzsf",
+    "userId": "id-1787822539885-zan999zjz",
+    "title": "Register & participate in Codeforces Round 976",
+    "description": "Solve first 3 problems within 45 minutes.",
+    "priority": "urgent",
+    "dueDate": "2026-10-04T09:56:37.289Z",
+    "category": "Competitive Programming",
+    "tags": [
+      "Contest",
+      "Codeforces"
+    ],
+    "isCompleted": false,
+    "createdAt": "2026-10-02T09:56:37.292Z",
+    "updatedAt": "2026-10-02T09:56:37.292Z"
+  },
+  {
+    "_id": "id-1790934997294-m1qg3faok",
+    "userId": "id-1787822539885-zan999zjz",
+    "title": "Review Operating System Virtual Memory & Paging",
+    "description": "Understand TLB hit/miss and Page Replacement Algorithms (LRU, FIFO).",
+    "priority": "medium",
+    "dueDate": "2026-10-05T09:56:37.289Z",
+    "category": "OS",
+    "tags": [
+      "CoreCS",
+      "Revision"
+    ],
+    "isCompleted": false,
+    "createdAt": "2026-10-02T09:56:37.294Z",
+    "updatedAt": "2026-10-02T09:56:37.294Z"
+  },
+  {
+    "_id": "id-1790934997296-obnabm4rv",
+    "userId": "id-1787822539885-zan999zjz",
+    "title": "Push Dupilio portfolio updates to GitHub repository",
+    "description": "Document architecture and update project README.",
+    "priority": "low",
+    "dueDate": "2026-10-06T09:56:37.289Z",
+    "category": "GitHub",
+    "tags": [
+      "OpenSource",
+      "Portfolio"
+    ],
+    "isCompleted": true,
+    "completedAt": "2026-10-02T09:56:37.289Z",
+    "createdAt": "2026-10-02T09:56:37.296Z",
+    "updatedAt": "2026-10-02T09:56:37.296Z"
+  }
+]
