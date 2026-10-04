@@ -276,6 +276,27 @@ export const api = {
   configureAiKey: async (apiKey) => {
     const res = await client.post('/ai/configure-key', { apiKey });
     return res.data;
+  },
+
+  // Career & Opportunities endpoints
+  getOpportunities: async (params = {}) => {
+    const query = new URLSearchParams(params).toString();
+    const res = await client.get(`/career/opportunities${query ? `?${query}` : ''}`);
+    return res.data;
+  },
+
+  getResumeData: async () => {
+    const res = await client.get('/resume');
+    return res.data;
+  },
+
+  uploadResume: async (formData) => {
+    const res = await client.post('/resume/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    return res.data;
   }
 };
 

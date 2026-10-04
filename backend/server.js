@@ -21,10 +21,14 @@ import preparationRoutes from './src/routes/preparation.routes.js';
 import leaderboardRoutes from './src/routes/leaderboard.routes.js';
 import discussionRoutes from './src/routes/discussion.routes.js';
 import aiRoutes from './src/routes/ai.routes.js';
+import resumeRoutes from './src/routes/resume.routes.js';
+import jobRoutes from './src/routes/job.routes.js';
+import opportunityRoutes from './src/routes/opportunity.routes.js';
 
 // Services & Seeders
 import { seedProblemsIfEmpty } from './src/controllers/problem.controller.js';
 import { seedEventsIfEmpty } from './src/services/events/eventService.js';
+import { seedOpportunitiesIfEmpty } from './src/services/opportunities/opportunityService.js';
 import { initSyncCron } from './src/services/sync/syncEngine.js';
 
 // Load Environment Variables
@@ -64,6 +68,9 @@ const mountRoutes = (prefix) => {
   app.use(`${prefix}/leaderboard`, leaderboardRoutes);
   app.use(`${prefix}/discussions`, discussionRoutes);
   app.use(`${prefix}/ai`, aiRoutes);
+  app.use(`${prefix}/career`, opportunityRoutes);
+  app.use(`${prefix}/resume`, resumeRoutes);
+  app.use(`${prefix}/jobs`, jobRoutes);
 };
 
 mountRoutes('/api/v1');

@@ -23,6 +23,7 @@ import Leaderboard from './pages/leaderboard/Leaderboard';
 import Discussions from './pages/discussions/Discussions';
 import AiAssistant from './pages/ai/AiAssistant';
 import Settings from './pages/settings/Settings';
+import CareerHub from './pages/career/CareerHub';
 
 // Helper Route guard
 const ProtectedRoute = ({ children }) => {
@@ -72,6 +73,7 @@ export default function App() {
               <Route path="leaderboard" element={<Leaderboard />} />
               <Route path="discussions" element={<Discussions />} />
               <Route path="ai-assistant" element={<AiAssistant />} />
+              <Route path="career" element={<CareerHub />} />
               <Route path="settings" element={<Settings />} />
 
               {/* Seamless Aliases for Backwards Compatibility */}
@@ -82,7 +84,8 @@ export default function App() {
               <Route path="weak-topics" element={<Navigate to="/preparation" replace />} />
               <Route path="oa-prep" element={<Navigate to="/preparation" replace />} />
               <Route path="company-mock" element={<Navigate to="/preparation" replace />} />
-              <Route path="resume" element={<Navigate to="/dashboard" replace />} />
+              <Route path="resume" element={<Navigate to="/career" replace />} />
+              <Route path="jobs" element={<Navigate to="/career" replace />} />
               <Route path="notes" element={<Navigate to="/preparation" replace />} />
             </Route>
 

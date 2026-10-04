@@ -1,8 +1,8 @@
 # DUPILIO
 
-> **Your complete developer profile, preparation, and opportunity hub.**
+> **One profile. Every opportunity. A smarter path to your next role.**
 
-DUPILIO is a unified platform for competitive programmers, open-source contributors, student developers, and hackathon participants. It aggregates your performance across multiple coding platforms into a single, transparent **Dupilio Developer Score**, coordinates contest schedules, pinpoints DSA weak areas, and drives structured daily preparation.
+DUPILIO is a production-grade developer intelligence platform for competitive programmers, open-source contributors, student developers, and hackathon participants. It aggregates your performance across multiple coding platforms into a single, transparent **Dupilio Developer Score**, coordinates contest schedules, pinpoints DSA weak areas, matches career opportunities, and drives structured daily preparation.
 
 ---
 

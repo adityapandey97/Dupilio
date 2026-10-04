@@ -1,37 +1,10 @@
 import { Job } from '../models/Job.js';
-import { mockJobs } from '../../../frontend/src/data/jobs.js';
-
-// Seed jobs if empty
-const seedJobsIfEmpty = async (userId) => {
-  try {
-    const list = await Job.find({ userId });
-    if (list.length === 0) {
-      console.log(`🌱 Seeding default Kanban jobs for user: ${userId}...`);
-      for (const j of mockJobs) {
-        await Job.create({
-          userId,
-          company: j.company,
-          role: j.role,
-          status: j.status,
-          salary: j.salary || '',
-          appliedDate: j.appliedDate,
-          notes: j.notes || ''
-        });
-      }
-    }
-  } catch (e) {
-    console.error('⚠️ Seeding jobs failed: ', e.message);
-  }
-};
 
 // @desc    Get All Job Applications
 // @route   GET /api/v1/jobs
 // @access  Private
 export const getJobs = async (req, res, next) => {
   try {
-    // Seed default jobs first for demonstration
-    await seedJobsIfEmpty(req.user._id);
-
     const jobs = await Job.find({ userId: req.user._id });
     res.json({ success: true, jobs });
   } catch (err) {

@@ -16,14 +16,14 @@ export const User = createModel('User', {
     showEmail: { type: Boolean, default: false }
   },
   developerScore: {
-    overall: { type: Number, default: 72 },
+    overall: { type: Number, default: 0 },
     dimensions: {
-      problemSolving: { type: Number, default: 75 },
-      competitiveProgramming: { type: Number, default: 68 },
-      consistency: { type: Number, default: 70 },
-      contestParticipation: { type: Number, default: 64 },
-      gitHubActivity: { type: Number, default: 78 },
-      projectActivity: { type: Number, default: 74 }
+      problemSolving: { type: Number, default: 0 },
+      competitiveProgramming: { type: Number, default: 0 },
+      consistency: { type: Number, default: 0 },
+      contestParticipation: { type: Number, default: 0 },
+      gitHubActivity: { type: Number, default: 0 },
+      projectActivity: { type: Number, default: 0 }
     },
     calculatedAt: { type: String, default: () => new Date().toISOString() }
   },
@@ -53,8 +53,8 @@ export const User = createModel('User', {
     developerDna: {
       languages: { type: Array, default: [] },
       detectedTechStack: { type: [String], default: [] },
-      velocityScore: { type: Number, default: 74 },
-      commitStreakDays: { type: Number, default: 14 },
+      velocityScore: { type: Number, default: 0 },
+      commitStreakDays: { type: Number, default: 0 },
       totalStars: { type: Number, default: 0 },
       topRepositories: { type: Array, default: [] }
     },
@@ -63,7 +63,7 @@ export const User = createModel('User', {
       weakTopics: { type: Array, default: [] },
       fallPoints: { type: Array, default: [] },
       recommendedProblemSets: { type: Array, default: [] },
-      placementReadinessIndex: { type: Number, default: 72 },
+      placementReadinessIndex: { type: Number, default: 0 },
       summary: { type: String, default: '' },
       lastAnalyzedAt: { type: String, default: '' }
     }

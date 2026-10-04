@@ -314,5 +314,41 @@
     },
     "createdAt": "2026-10-04T16:30:02.336Z",
     "updatedAt": "2026-10-04T16:30:02.336Z"
+  },
+  {
+    "_id": "id-1791142204375-z1nb06ls0",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T19:30:00.024Z",
+      "completedAt": "2026-10-04T19:30:04.373Z"
+    },
+    "createdAt": "2026-10-04T19:30:04.375Z",
+    "updatedAt": "2026-10-04T19:30:04.375Z"
+  },
+  {
+    "_id": "id-1791144005057-niekfnil2",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T20:00:00.079Z",
+      "completedAt": "2026-10-04T20:00:05.055Z"
+    },
+    "createdAt": "2026-10-04T20:00:05.058Z",
+    "updatedAt": "2026-10-04T20:00:05.058Z"
+  },
+  {
+    "_id": "id-1791144428211-vsbz3e49j",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T20:07:03.952Z",
+      "completedAt": "2026-10-04T20:07:08.210Z"
+    },
+    "createdAt": "2026-10-04T20:07:08.212Z",
+    "updatedAt": "2026-10-04T20:07:08.212Z"
   }
 ]
