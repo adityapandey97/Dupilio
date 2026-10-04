@@ -121,26 +121,19 @@
       }
     },
     "createdAt": "2026-08-27T10:17:27.138Z",
-    "updatedAt": "2026-10-02T18:30:02.701Z",
+    "updatedAt": "2026-10-04T12:30:01.759Z",
     "developerScore": {
       "label": "Dupilio Developer Score",
-      "overall": 56,
+      "overall": 0,
       "dimensions": {
-        "problemSolving": 62,
-        "competitiveProgramming": 20,
-        "consistency": 60,
-        "contestParticipation": 45,
-        "gitHubActivity": 98,
-        "projectActivity": 78
+        "problemSolving": 0,
+        "competitiveProgramming": 0,
+        "contestParticipation": 0,
+        "consistency": 0,
+        "githubActivity": 0,
+        "projectActivity": 0
       },
-      "metricsSummary": {
-        "totalSolved": 218,
-        "maxRating": 0,
-        "totalContests": 0,
-        "currentStreak": 18,
-        "githubStars": 28
-      },
-      "calculatedAt": "2026-10-02T18:30:02.701Z"
+      "calculatedAt": "2026-10-04T12:30:01.757Z"
     }
   }
 ]

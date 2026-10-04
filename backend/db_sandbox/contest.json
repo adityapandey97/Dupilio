@@ -12,7 +12,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:13.559Z",
-    "updatedAt": "2026-10-04T06:30:23.841Z",
+    "updatedAt": "2026-10-04T16:30:00.687Z",
     "ratingRange": "Rating < 1600"
   },
   {
@@ -28,7 +28,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:13.577Z",
-    "updatedAt": "2026-10-04T06:30:23.844Z",
+    "updatedAt": "2026-10-04T16:30:00.692Z",
     "ratingRange": "All Ratings"
   },
   {
@@ -44,7 +44,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:13.592Z",
-    "updatedAt": "2026-10-04T06:30:23.847Z",
+    "updatedAt": "2026-10-04T16:30:00.701Z",
     "ratingRange": "Div. 1 (Rating >= 1900)"
   },
   {
@@ -60,7 +60,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:13.601Z",
-    "updatedAt": "2026-10-04T06:30:23.849Z",
+    "updatedAt": "2026-10-04T16:30:00.708Z",
     "ratingRange": "Rating < 2100"
   },
   {
@@ -76,7 +76,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:13.608Z",
-    "updatedAt": "2026-10-04T06:30:23.852Z",
+    "updatedAt": "2026-10-04T16:30:00.712Z",
     "ratingRange": "All Ratings"
   },
   {
@@ -92,7 +92,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:14.104Z",
-    "updatedAt": "2026-10-04T06:30:24.365Z",
+    "updatedAt": "2026-10-04T16:30:01.549Z",
     "ratingRange": "All Ratings"
   },
   {
@@ -108,7 +108,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:14.114Z",
-    "updatedAt": "2026-10-04T06:30:24.369Z",
+    "updatedAt": "2026-10-04T16:30:01.556Z",
     "ratingRange": "All Ratings"
   },
   {
@@ -124,7 +124,7 @@
     "difficulty": "Div 1",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:14.492Z",
-    "updatedAt": "2026-10-04T06:30:24.821Z",
+    "updatedAt": "2026-10-04T16:30:01.983Z",
     "ratingRange": "All Divisions (Div 1, 2, 3, 4)"
   },
   {
@@ -136,11 +136,11 @@
     "startTime": "2026-10-04T12:00:00.000Z",
     "endTime": "2026-10-04T13:40:00.000Z",
     "durationSeconds": 6000,
-    "status": "upcoming",
+    "status": "past",
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.410Z",
-    "updatedAt": "2026-10-04T06:30:25.503Z",
+    "updatedAt": "2026-10-04T14:00:02.106Z",
     "ratingRange": "All Ratings"
   },
   {
@@ -156,7 +156,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.421Z",
-    "updatedAt": "2026-10-04T06:30:25.509Z",
+    "updatedAt": "2026-10-04T16:30:02.256Z",
     "ratingRange": "All Ratings"
   },
   {
@@ -172,7 +172,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.427Z",
-    "updatedAt": "2026-10-04T06:30:25.512Z",
+    "updatedAt": "2026-10-04T16:30:02.264Z",
     "ratingRange": "Rating < 2000"
   },
   {
@@ -188,7 +188,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.438Z",
-    "updatedAt": "2026-10-04T06:30:25.515Z",
+    "updatedAt": "2026-10-04T16:30:02.289Z",
     "ratingRange": "Open to All"
   },
   {
@@ -204,7 +204,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.445Z",
-    "updatedAt": "2026-10-04T06:30:25.518Z",
+    "updatedAt": "2026-10-04T16:30:02.315Z",
     "ratingRange": "Open to All"
   },
   {
@@ -220,7 +220,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.455Z",
-    "updatedAt": "2026-10-04T06:30:25.520Z",
+    "updatedAt": "2026-10-04T16:30:02.323Z",
     "ratingRange": "Rating < 2000"
   },
   {
@@ -236,7 +236,7 @@
     "difficulty": "All Ratings",
     "phase": "BEFORE",
     "createdAt": "2026-10-04T06:20:15.460Z",
-    "updatedAt": "2026-10-04T06:30:25.523Z",
+    "updatedAt": "2026-10-04T16:30:02.329Z",
     "ratingRange": "Open to All"
   }
 ]

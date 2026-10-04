@@ -182,5 +182,137 @@
     },
     "createdAt": "2026-10-04T06:30:25.527Z",
     "updatedAt": "2026-10-04T06:30:25.527Z"
+  },
+  {
+    "_id": "id-1791098578881-vkvohats5",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 0,
+      "startedAt": "2026-10-04T07:22:58.660Z",
+      "completedAt": "2026-10-04T07:22:58.879Z"
+    },
+    "createdAt": "2026-10-04T07:22:58.881Z",
+    "updatedAt": "2026-10-04T07:22:58.881Z"
+  },
+  {
+    "_id": "id-1791100803602-5fzmsnm5b",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 15,
+      "startedAt": "2026-10-04T08:00:00.030Z",
+      "completedAt": "2026-10-04T08:00:03.598Z"
+    },
+    "createdAt": "2026-10-04T08:00:03.602Z",
+    "updatedAt": "2026-10-04T08:00:03.602Z"
+  },
+  {
+    "_id": "id-1791106202177-xqn14tq00",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 15,
+      "startedAt": "2026-10-04T09:30:00.023Z",
+      "completedAt": "2026-10-04T09:30:02.172Z"
+    },
+    "createdAt": "2026-10-04T09:30:02.177Z",
+    "updatedAt": "2026-10-04T09:30:02.177Z"
+  },
+  {
+    "_id": "id-1791109802048-6lj7fi6l3",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 15,
+      "startedAt": "2026-10-04T10:30:00.030Z",
+      "completedAt": "2026-10-04T10:30:02.044Z"
+    },
+    "createdAt": "2026-10-04T10:30:02.049Z",
+    "updatedAt": "2026-10-04T10:30:02.049Z"
+  },
+  {
+    "_id": "id-1791111611648-8hdzsez1g",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 7,
+      "startedAt": "2026-10-04T11:00:00.028Z",
+      "completedAt": "2026-10-04T11:00:11.647Z"
+    },
+    "createdAt": "2026-10-04T11:00:11.649Z",
+    "updatedAt": "2026-10-04T11:00:11.649Z"
+  },
+  {
+    "_id": "id-1791113402378-n3q7bfnu1",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 15,
+      "startedAt": "2026-10-04T11:30:00.022Z",
+      "completedAt": "2026-10-04T11:30:02.377Z"
+    },
+    "createdAt": "2026-10-04T11:30:02.380Z",
+    "updatedAt": "2026-10-04T11:30:02.380Z"
+  },
+  {
+    "_id": "id-1791117002607-4y3hm11iw",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T12:30:00.152Z",
+      "completedAt": "2026-10-04T12:30:02.606Z"
+    },
+    "createdAt": "2026-10-04T12:30:02.607Z",
+    "updatedAt": "2026-10-04T12:30:02.607Z"
+  },
+  {
+    "_id": "id-1791122402112-8pz3yitoz",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T14:00:00.033Z",
+      "completedAt": "2026-10-04T14:00:02.108Z"
+    },
+    "createdAt": "2026-10-04T14:00:02.114Z",
+    "updatedAt": "2026-10-04T14:00:02.114Z"
+  },
+  {
+    "_id": "id-1791124202115-3t1ivgqvo",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T14:30:00.012Z",
+      "completedAt": "2026-10-04T14:30:02.114Z"
+    },
+    "createdAt": "2026-10-04T14:30:02.116Z",
+    "updatedAt": "2026-10-04T14:30:02.116Z"
+  },
+  {
+    "_id": "id-1791127801991-pyxse660v",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T15:30:00.024Z",
+      "completedAt": "2026-10-04T15:30:01.990Z"
+    },
+    "createdAt": "2026-10-04T15:30:01.991Z",
+    "updatedAt": "2026-10-04T15:30:01.991Z"
+  },
+  {
+    "_id": "id-1791131402336-htnq04o0g",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 14,
+      "startedAt": "2026-10-04T16:30:00.010Z",
+      "completedAt": "2026-10-04T16:30:02.333Z"
+    },
+    "createdAt": "2026-10-04T16:30:02.336Z",
+    "updatedAt": "2026-10-04T16:30:02.336Z"
   }
 ]

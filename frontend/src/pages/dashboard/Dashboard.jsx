@@ -26,7 +26,8 @@ import {
   Swords,
   Layers,
   TrendingUp,
-  Cpu
+  Cpu,
+  Plus
 } from 'lucide-react';
 import {
   ResponsiveContainer,

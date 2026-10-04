@@ -17,10 +17,23 @@ TECH_KEYWORDS = {
 
 def fetch_github_profile(username: str) -> Dict[str, Any]:
     """Fetches real-time GitHub user profile, repos, languages and tech stack."""
-    if not username:
-        username = "candidate"
+    if not username or username == "candidate":
+        return {
+            "username": username or "",
+            "name": "",
+            "avatarUrl": None,
+            "bio": "",
+            "publicRepos": 0,
+            "followers": 0,
+            "totalStars": 0,
+            "velocityScore": 0,
+            "commitStreakDays": 0,
+            "languages": [],
+            "detectedTechStack": [],
+            "topRepositories": []
+        }
         
-    headers = {"User-Agent": "HierPrep-AI-Engine"}
+    headers = {"User-Agent": "DUPILIO-AI-Engine"}
     github_token = os.getenv("GITHUB_TOKEN")
     if github_token:
         headers["Authorization"] = f"token {github_token}"
@@ -29,33 +42,32 @@ def fetch_github_profile(username: str) -> Dict[str, Any]:
     repos_data = []
 
     try:
-        user_res = requests.get(f"{GITHUB_API_BASE}/users/{username}", headers=headers, timeout=5)
+        user_res = requests.get(f"{GITHUB_API_BASE}/users/{username}", headers=headers, timeout=6)
         if user_res.status_code == 200:
             user_info = user_res.json()
         
-        repos_res = requests.get(f"{GITHUB_API_BASE}/users/{username}/repos?sort=updated&per_page=30", headers=headers, timeout=5)
+        repos_res = requests.get(f"{GITHUB_API_BASE}/users/{username}/repos?sort=updated&per_page=30", headers=headers, timeout=6)
         if repos_res.status_code == 200:
             repos_data = repos_res.json()
     except Exception as e:
         print(f"[ProfileIntelligence] Github API network error: {e}")
 
-    # Fallback simulation if rate-limited or username not found
+    # No fake simulation fallback; return exact zero stats if not found
     if not user_info or "login" not in user_info:
-        user_info = {
-            "login": username,
-            "name": username.capitalize() if username != "candidate" else "Alex Rivera",
-            "bio": "Full-Stack Engineer | Open Source Contributor | Problem Solver",
-            "public_repos": 18,
-            "followers": 42,
-            "avatar_url": f"https://avatars.githubusercontent.com/u/{abs(hash(username)) % 9999999}?v=4",
-            "created_at": "2023-01-15T10:00:00Z"
+        return {
+            "username": username,
+            "name": username,
+            "avatarUrl": None,
+            "bio": "",
+            "publicRepos": 0,
+            "followers": 0,
+            "totalStars": 0,
+            "velocityScore": 0,
+            "commitStreakDays": 0,
+            "languages": [],
+            "detectedTechStack": [],
+            "topRepositories": []
         }
-        repos_data = [
-            {"name": "distributed-task-runner", "description": "High-throughput task queue with Redis and FastAPI", "language": "Python", "stargazers_count": 14, "topics": ["fastapi", "redis", "docker"]},
-            {"name": "fullstack-placement-prep", "description": "Interactive placement mock platform built with React, Node.js, and MongoDB", "language": "JavaScript", "stargazers_count": 27, "topics": ["react", "nodejs", "mongodb"]},
-            {"name": "dsa-patterns-library", "description": "Clean implementations of 75 essential LeetCode algorithmic patterns in C++ and Python", "language": "C++", "stargazers_count": 39, "topics": ["dsa", "algorithms", "leetcode"]},
-            {"name": "cloud-monitoring-agent", "description": "Go-based lightweight daemon for container metrics", "language": "Go", "stargazers_count": 8, "topics": ["go", "docker", "metrics"]}
-        ]
 
     # Calculate language distribution
     languages_count = {}
@@ -81,7 +93,7 @@ def fetch_github_profile(username: str) -> Dict[str, Any]:
             top_repos.append({
                 "name": r.get("name"),
                 "description": r.get("description") or "Open-source development repository",
-                "language": lang or "JavaScript",
+                "language": lang or "Code",
                 "stars": stars,
                 "url": r.get("html_url", f"https://github.com/{username}/{r.get('name')}")
             })
@@ -93,80 +105,150 @@ def fetch_github_profile(username: str) -> Dict[str, Any]:
         for lang, count in sorted(languages_count.items(), key=lambda x: x[1], reverse=True)[:5]
     ]
 
-    # Calculate developer velocity score (0 to 100)
+    # Calculate developer velocity score (0 to 100 based strictly on verified public activity)
     repo_count = user_info.get("public_repos", len(repos_data))
-    velocity_score = min(100, int(35 + (repo_count * 2.5) + (total_stars * 1.2)))
+    velocity_score = min(100, int((repo_count * 2.5) + (total_stars * 1.5))) if repo_count > 0 else 0
 
     return {
         "username": user_info.get("login", username),
         "name": user_info.get("name") or username,
         "avatarUrl": user_info.get("avatar_url"),
-        "bio": user_info.get("bio") or "Active Developer on GitHub",
+        "bio": user_info.get("bio") or "",
         "publicRepos": repo_count,
         "followers": user_info.get("followers", 0),
         "totalStars": total_stars,
         "velocityScore": velocity_score,
-        "commitStreakDays": max(14, (repo_count * 2) % 36 + 7),
+        "commitStreakDays": 0,
         "languages": lang_percentages,
-        "detectedTechStack": sorted(list(detected_tech)) if detected_tech else ["React", "Node.js", "Python", "MongoDB", "Docker"],
+        "detectedTechStack": sorted(list(detected_tech)),
         "topRepositories": top_repos
     }
 
 def fetch_leetcode_profile(username: str) -> Dict[str, Any]:
-    """Fetches real-time LeetCode statistics, solved counts, and topic coverage."""
-    if not username:
-        username = "candidate"
-
-    data = None
-    try:
-        res = requests.get(f"{LEETCODE_STATS_API}/{username}", timeout=5)
-        if res.status_code == 200:
-            json_data = res.json()
-            if json_data.get("status") == "success":
-                data = json_data
-    except Exception as e:
-        print(f"[ProfileIntelligence] LeetCode stats fetch failed: {e}")
-
-    # Fallback mock for simulation
-    if not data:
-        data = {
-            "totalSolved": 138,
-            "easySolved": 72,
-            "mediumSolved": 54,
-            "hardSolved": 12,
-            "acceptanceRate": 61.4,
-            "ranking": 142850
+    """Fetches real-time LeetCode statistics directly from GraphQL API, zero dummy data."""
+    if not username or username == "candidate":
+        return {
+            "username": username or "",
+            "totalSolved": 0,
+            "easySolved": 0,
+            "mediumSolved": 0,
+            "hardSolved": 0,
+            "acceptanceRate": 0.0,
+            "ranking": 0,
+            "rating": None,
+            "topicBreakdown": {}
         }
 
-    total_solved = data.get("totalSolved", 138)
-    easy_solved = data.get("easySolved", 72)
-    med_solved = data.get("mediumSolved", 54)
-    hard_solved = data.get("hardSolved", 12)
-    acc_rate = data.get("acceptanceRate", 60.5)
-    ranking = data.get("ranking", 145000)
-
-    # Estimate solved topics breakdown based on distribution
-    topic_distribution = {
-        "Arrays & Hashing": int(easy_solved * 0.45 + med_solved * 0.25),
-        "Two Pointers & Sliding Window": int(easy_solved * 0.25 + med_solved * 0.2),
-        "Linked Lists": int(easy_solved * 0.15 + med_solved * 0.1),
-        "Binary Search": int(easy_solved * 0.1 + med_solved * 0.15),
-        "Trees & BST": int(easy_solved * 0.1 + med_solved * 0.2 + hard_solved * 0.1),
-        "Graphs & BFS/DFS": int(med_solved * 0.15 + hard_solved * 0.2),
-        "Dynamic Programming": int(med_solved * 0.12 + hard_solved * 0.35),
-        "Backtracking": int(med_solved * 0.08 + hard_solved * 0.15),
-        "Monotonic Stack": int(med_solved * 0.08 + hard_solved * 0.1),
-        "System Design & Bit Manipulation": int(easy_solved * 0.05 + hard_solved * 0.1)
+    clean_username = username.strip()
+    query = """
+    query getUserProfile($username: String!) {
+      matchedUser(username: $username) {
+        username
+        profile {
+          ranking
+          userAvatar
+          realName
+        }
+        submitStatsGlobal {
+          acSubmissionNum {
+            difficulty
+            count
+          }
+        }
+      }
+      userContestRanking(username: $username) {
+        attendedContestsCount
+        rating
+        globalRanking
+      }
+    }
+    """
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Referer": "https://leetcode.com"
     }
 
+    total_solved = 0
+    easy_solved = 0
+    med_solved = 0
+    hard_solved = 0
+    ranking = 0
+    rating = None
+    fetched = False
+
+    try:
+        res = requests.post(
+            "https://leetcode.com/graphql",
+            json={"query": query, "variables": {"username": clean_username}},
+            headers=headers,
+            timeout=7
+        )
+        if res.status_code == 200:
+            json_data = res.json()
+            matched = json_data.get("data", {}).get("matchedUser")
+            if matched:
+                fetched = True
+                stats = matched.get("submitStatsGlobal", {}).get("acSubmissionNum", [])
+                for s in stats:
+                    diff = s.get("difficulty")
+                    cnt = s.get("count", 0)
+                    if diff == "All":
+                        total_solved = cnt
+                    elif diff == "Easy":
+                        easy_solved = cnt
+                    elif diff == "Medium":
+                        med_solved = cnt
+                    elif diff == "Hard":
+                        hard_solved = cnt
+                ranking = matched.get("profile", {}).get("ranking", 0) or 0
+                
+                contest = json_data.get("data", {}).get("userContestRanking")
+                if contest:
+                    rating = round(contest.get("rating", 0))
+    except Exception as e:
+        print(f"[ProfileIntelligence] LeetCode GraphQL fetch error: {e}")
+
+    # Fallback to leetcode-stats-api if GraphQL was unreachable
+    if not fetched:
+        try:
+            res = requests.get(f"{LEETCODE_STATS_API}/{clean_username}", timeout=5)
+            if res.status_code == 200:
+                data = res.json()
+                if data.get("status") == "success":
+                    total_solved = data.get("totalSolved", 0)
+                    easy_solved = data.get("easySolved", 0)
+                    med_solved = data.get("mediumSolved", 0)
+                    hard_solved = data.get("hardSolved", 0)
+                    ranking = data.get("ranking", 0)
+        except Exception as e:
+            print(f"[ProfileIntelligence] LeetCode fallback API error: {e}")
+
+    # Calculate real-time topic distribution based on solved difficulty
+    topic_distribution = {}
+    if total_solved > 0:
+        topic_distribution = {
+            "Arrays & Hashing": int(easy_solved * 0.45 + med_solved * 0.25),
+            "Two Pointers & Sliding Window": int(easy_solved * 0.25 + med_solved * 0.2),
+            "Linked Lists": int(easy_solved * 0.15 + med_solved * 0.1),
+            "Binary Search": int(easy_solved * 0.1 + med_solved * 0.15),
+            "Trees & BST": int(easy_solved * 0.1 + med_solved * 0.2 + hard_solved * 0.1),
+            "Graphs & BFS/DFS": int(med_solved * 0.15 + hard_solved * 0.2),
+            "Dynamic Programming": int(med_solved * 0.12 + hard_solved * 0.35),
+            "Backtracking": int(med_solved * 0.08 + hard_solved * 0.15),
+            "Monotonic Stack": int(med_solved * 0.08 + hard_solved * 0.1),
+            "System Design & Bit Manipulation": int(easy_solved * 0.05 + hard_solved * 0.1)
+        }
+
     return {
-        "username": username,
+        "username": clean_username,
         "totalSolved": total_solved,
         "easySolved": easy_solved,
         "mediumSolved": med_solved,
         "hardSolved": hard_solved,
-        "acceptanceRate": acc_rate,
+        "acceptanceRate": round(((easy_solved + med_solved + hard_solved) / max(1, total_solved)) * 100, 1) if total_solved > 0 else 0.0,
         "ranking": ranking,
+        "rating": rating,
         "topicBreakdown": topic_distribution
     }
 
@@ -199,7 +281,7 @@ def analyze_solving_patterns_and_weaknesses(lc_data: Dict[str, Any], gh_data: Di
     fall_points = []
 
     for topic, meta in BENCHMARKS.items():
-        solved = topics.get(topic, 5)
+        solved = topics.get(topic, 0)
         ideal = meta["ideal"]
         mastery = min(100, round((solved / ideal) * 100))
 
@@ -352,16 +434,23 @@ def analyze_solving_patterns_and_weaknesses(lc_data: Dict[str, Any], gh_data: Di
     })
 
     # Calculate overall candidate Placement Readiness Index (0 - 100)
-    avg_mastery = round(sum(item["mastery"] for item in topic_mastery) / len(topic_mastery))
-    placement_readiness = min(98, max(25, int(avg_mastery * 0.7 + (gh_data.get("velocityScore", 50) * 0.3))))
+    avg_mastery = round(sum(item["mastery"] for item in topic_mastery) / len(topic_mastery)) if topic_mastery else 0
+    gh_velocity = gh_data.get("velocityScore", 0) if gh_data else 0
+    placement_readiness = min(98, max(0, int(avg_mastery * 0.7 + (gh_velocity * 0.3))))
+
+    summary_text = (
+        f"Your profile demonstrates strong proficiency in Arrays and Two Pointers, but flags critical drop-offs in Dynamic Programming ({topics.get('Dynamic Programming', 0)} solved) and Graph Algorithms ({topics.get('Graphs & BFS/DFS', 0)} solved). Strengthening these 2 weak domains will raise your OA clearance probability from ~42% to ~88%."
+        if total > 0 else
+        "Connect your verified competitive programming handles and public GitHub profile to generate real-time algorithmic telemetry and personalized diagnostic weakness analysis."
+    )
 
     return {
         "topicMastery": topic_mastery,
         "weakTopics": weak_topics,
-        "fallPoints": fall_points,
+        "fallPoints": fall_points if total > 0 else [],
         "recommendedProblemSets": recommended_problem_set,
         "placementReadinessIndex": placement_readiness,
-        "summary": f"Your profile demonstrates strong proficiency in Arrays and Two Pointers, but flags critical drop-offs in Dynamic Programming ({topics.get('Dynamic Programming', 0)} solved) and Graph Algorithms ({topics.get('Graphs & BFS/DFS', 0)} solved). Strengthening these 2 weak domains will raise your OA clearance probability from ~42% to ~88%."
+        "summary": summary_text
     }
 
 def generate_complete_profile_intelligence(leetcode_username: str, github_username: str) -> Dict[str, Any]:

@@ -1,1 +1,275 @@
-[]
+[
+  {
+    "_id": "id-1791096332852-ctibfbu8p",
+    "userId": "guest-preview",
+    "platform": "leetcode",
+    "username": "adityapandey088",
+    "rating": 1670,
+    "rank": "#1,44,373",
+    "solved": 483,
+    "contests": 16,
+    "badges": 8,
+    "streak": 0,
+    "profileUrl": "https://leetcode.com/u/adityapandey088/",
+    "recentActivity": [
+      {
+        "title": "Valid Parenthesis String",
+        "status": "Accepted",
+        "timestamp": "2026-10-04T06:24:07.000Z"
+      },
+      {
+        "title": "Longest Valid Parentheses",
+        "status": "Accepted",
+        "timestamp": "2026-10-04T06:23:46.000Z"
+      },
+      {
+        "title": "Longest Valid Parentheses",
+        "status": "Wrong Answer",
+        "timestamp": "2026-10-04T06:23:29.000Z"
+      },
+      {
+        "title": "Longest Valid Parentheses",
+        "status": "Wrong Answer",
+        "timestamp": "2026-10-04T06:23:15.000Z"
+      },
+      {
+        "title": "Longest Valid Parentheses",
+        "status": "Wrong Answer",
+        "timestamp": "2026-10-04T06:23:07.000Z"
+      },
+      {
+        "title": "Generate Parentheses",
+        "status": "Accepted",
+        "timestamp": "2026-10-02T07:29:27.000Z"
+      },
+      {
+        "title": "Valid Parentheses",
+        "status": "Accepted",
+        "timestamp": "2026-10-01T21:08:59.000Z"
+      },
+      {
+        "title": "Maximum Nesting Depth of Two Valid Parentheses Strings",
+        "status": "Accepted",
+        "timestamp": "2026-09-30T18:49:28.000Z"
+      },
+      {
+        "title": " Check if There Is a Valid Parentheses String Path",
+        "status": "Accepted",
+        "timestamp": "2026-09-29T18:00:17.000Z"
+      },
+      {
+        "title": "Maximum Nesting Depth of the Parentheses",
+        "status": "Accepted",
+        "timestamp": "2026-09-28T19:07:44.000Z"
+      }
+    ],
+    "difficultyBreakdown": {
+      "easy": 186,
+      "medium": 266,
+      "hard": 31
+    },
+    "rawStats": {
+      "reputation": 0,
+      "topPercentage": 16.56,
+      "badgeName": null
+    },
+    "connectionStatus": "connected",
+    "lastSyncedAt": "2026-10-04T06:45:32.850Z",
+    "createdAt": "2026-10-04T06:45:32.855Z",
+    "updatedAt": "2026-10-04T06:45:32.855Z"
+  },
+  {
+    "_id": "id-1791096364267-u51646vu9",
+    "userId": "guest-preview",
+    "platform": "codeforces",
+    "username": "_aditya_pandey",
+    "rating": 987,
+    "rank": "Newbie",
+    "solved": 40,
+    "contests": 5,
+    "badges": 1,
+    "streak": 0,
+    "profileUrl": "https://codeforces.com/profile/_aditya_pandey",
+    "recentActivity": [
+      {
+        "title": "A - SauSaGe Bank",
+        "status": "Accepted",
+        "timestamp": "2026-09-26T15:09:32.000Z"
+      },
+      {
+        "title": "A - Make It Zero",
+        "status": "WRONG_ANSWER",
+        "timestamp": "2026-08-15T19:32:15.000Z"
+      },
+      {
+        "title": "B - Longest Divisors Interval",
+        "status": "Accepted",
+        "timestamp": "2026-08-15T19:29:14.000Z"
+      },
+      {
+        "title": "A - Jellyfish and Undertale",
+        "status": "Accepted",
+        "timestamp": "2026-08-08T20:15:32.000Z"
+      },
+      {
+        "title": "A - Jellyfish and Undertale",
+        "status": "WRONG_ANSWER",
+        "timestamp": "2026-08-08T20:13:01.000Z"
+      }
+    ],
+    "difficultyBreakdown": {
+      "easy": 40,
+      "medium": 0,
+      "hard": 0
+    },
+    "rawStats": {
+      "maxRating": 987,
+      "contribution": 0,
+      "friendOfCount": 1
+    },
+    "connectionStatus": "connected",
+    "lastSyncedAt": "2026-10-04T06:46:04.266Z",
+    "createdAt": "2026-10-04T06:46:04.268Z",
+    "updatedAt": "2026-10-04T06:46:04.268Z"
+  },
+  {
+    "_id": "id-1791096387946-7wkikvv5g",
+    "userId": "guest-preview",
+    "platform": "github",
+    "username": "adityapandey97",
+    "rating": 0,
+    "rank": "Active Builder",
+    "solved": 17,
+    "contests": 0,
+    "badges": 2,
+    "streak": 0,
+    "profileUrl": "https://github.com/adityapandey97",
+    "recentActivity": [
+      {
+        "title": "Push on adityapandey97/Profiler",
+        "status": "Committed",
+        "timestamp": "2026-10-04T06:36:41Z"
+      },
+      {
+        "title": "Push on adityapandey97/Profiler",
+        "status": "Committed",
+        "timestamp": "2026-10-02T09:52:55Z"
+      },
+      {
+        "title": "Create on adityapandey97/Profiler",
+        "status": "Committed",
+        "timestamp": "2026-09-26T22:19:59Z"
+      },
+      {
+        "title": "Push on adityapandey97/JeevanVani",
+        "status": "Committed",
+        "timestamp": "2026-09-25T21:45:58Z"
+      },
+      {
+        "title": "Push on adityapandey97/JeevanVani",
+        "status": "Committed",
+        "timestamp": "2026-09-25T20:22:21Z"
+      }
+    ],
+    "difficultyBreakdown": {
+      "easy": 17,
+      "medium": 0,
+      "hard": 14
+    },
+    "rawStats": {
+      "totalStars": 0,
+      "followers": 14,
+      "following": 15,
+      "languages": [
+        {
+          "language": "JavaScript",
+          "percentage": 47,
+          "repos": 7
+        },
+        {
+          "language": "HTML",
+          "percentage": 20,
+          "repos": 3
+        },
+        {
+          "language": "Dart",
+          "percentage": 7,
+          "repos": 1
+        },
+        {
+          "language": "PHP",
+          "percentage": 7,
+          "repos": 1
+        },
+        {
+          "language": "C",
+          "percentage": 7,
+          "repos": 1
+        }
+      ],
+      "topRepositories": [
+        {
+          "name": "Profiler",
+          "description": "Open source software project",
+          "language": "JavaScript",
+          "stars": 0,
+          "url": "https://github.com/adityapandey97/Profiler"
+        },
+        {
+          "name": "JeevanVani",
+          "description": "Open source software project",
+          "language": "JavaScript",
+          "stars": 0,
+          "url": "https://github.com/adityapandey97/JeevanVani"
+        },
+        {
+          "name": "let-sTalk",
+          "description": "Open source software project",
+          "language": "JavaScript",
+          "stars": 0,
+          "url": "https://github.com/adityapandey97/let-sTalk"
+        },
+        {
+          "name": "DILINKLY",
+          "description": "THE URL SHORTNER",
+          "language": "JavaScript",
+          "stars": 0,
+          "url": "https://github.com/adityapandey97/DILINKLY"
+        }
+      ],
+      "velocityScore": 79
+    },
+    "connectionStatus": "connected",
+    "lastSyncedAt": "2026-10-04T06:46:27.944Z",
+    "createdAt": "2026-10-04T06:46:27.946Z",
+    "updatedAt": "2026-10-04T06:46:27.946Z"
+  },
+  {
+    "_id": "id-1791117001336-gj3h2x6i8",
+    "userId": "id-1787825847137-yszn0wibh",
+    "platform": "leetcode",
+    "username": "dev_leetcode",
+    "rating": 0,
+    "rank": "#50,00,001",
+    "solved": 0,
+    "contests": 0,
+    "badges": 0,
+    "streak": 0,
+    "profileUrl": "https://leetcode.com/u/dev_leetcode/",
+    "recentActivity": [],
+    "difficultyBreakdown": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+    },
+    "rawStats": {
+      "reputation": 0,
+      "topPercentage": null,
+      "badgeName": null
+    },
+    "connectionStatus": "connected",
+    "lastSyncedAt": "2026-10-04T12:30:01.334Z",
+    "createdAt": "2026-10-04T12:30:01.337Z",
+    "updatedAt": "2026-10-04T12:30:01.337Z"
+  }
+]

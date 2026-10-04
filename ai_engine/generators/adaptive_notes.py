@@ -142,7 +142,7 @@ def precheck_topic_knowledge(topic: str, user_profile: Dict[str, Any] = None) ->
         "precheckRequired": True,
         "initialDiagnosedTier": initial_tier,
         "diagnosticQuestions": diagnostic_questions,
-        "instructions": f"Take this 60-second diagnostic pre-check. HierPrep will analyze your responses and generate adaptive notes tailored to your exact mastery level (Novice, Intermediate, or Advanced)."
+        "instructions": f"Take this 60-second diagnostic pre-check. DUPILIO will analyze your responses and generate adaptive notes tailored to your exact mastery level (Novice, Intermediate, or Advanced)."
     }
 
 def generate_adaptive_notes(topic: str, tier: str = "INTERMEDIATE", score_pct: int = 70) -> Dict[str, Any]:

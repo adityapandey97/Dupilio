@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "id-1791096578273-jjz4s8zns",
+    "title": "How I reached 1900+ Rating on Codeforces (Roadmap & Speed Tips)",
+    "content": "Here is the practical roadmap to break into Candidate Master on Codeforces:\n1. **Speed on Div 2 A and B**: You must solve A and B within the first 15-20 minutes. Practice implementation speed on 800-1100 rated problems.\n2. **Greedy & Constructive Algorithms**: Div 2 C is almost always greedy, constructive algorithms, or prefix sums. Prove your invariant rather than guessing.\n3. **Number Theory & Binary Search on Answer**: Div 2 D frequently combines binary search with checking functions or modular arithmetic.\n4. **Never skip virtual contests**: Treat virtual contests exactly like live contests without looking at solutions until time expires.",
+    "author": {
+      "name": "Aditya Pandey",
+      "email": "aditya@example.com",
+      "college": "NIT"
+    },
+    "category": "Competitive Programming",
+    "company": "General",
+    "tags": [
+      "Codeforces",
+      "CompetitiveProgramming",
+      "RatingGuide",
+      "Algorithms"
+    ],
+    "upvotes": 248,
+    "upvotedBy": [],
+    "views": 1420,
+    "bookmarksCount": 64,
+    "bookmarkedBy": [],
+    "reportsCount": 0,
+    "aiSummary": "Practical strategy for reaching Candidate Master: optimize Div 2 A/B speed to under 20 mins, focus on constructive greedy patterns for C, and commit to unpaused virtual contests.",
+    "comments": [
+      {
+        "id": "c1",
+        "author": "Siddharth Sharma",
+        "text": "The advice on proving the invariant before writing code on Problem C changed my contest trajectory completely.",
+        "createdAt": "2 days ago"
+      }
+    ],
+    "createdAt": "2026-10-04T06:49:38.273Z",
+    "updatedAt": "2026-10-04T06:49:38.274Z"
+  },
+  {
+    "_id": "id-1791096578282-jxnqwoinr",
+    "title": "Top Open Source Programs for College Students in 2026 (GSoC, LFX, MLH)",
+    "content": "If you want to build exceptional real-world software engineering depth and earn valuable stipends, open source is unmatched.\n- **GSoC (Google Summer of Code)**: Organizations announce in February. Start communicating on their mailing lists/Slack now! Pick small \"good-first-issue\" PRs.\n- **LFX Mentorship**: Offered three times a year by Linux Foundation (Cloud Native, Kubernetes, Prometheus). High stipend and direct mentorship.\n- **MLH Fellowship**: Excellent 12-week remote fellowship focusing on open-source contributions with top tech companies.",
+    "author": {
+      "name": "Ananya Iyer",
+      "email": "ananya@example.com",
+      "college": "BITS Pilani"
+    },
+    "category": "Hackathons",
+    "company": "Open Source",
+    "tags": [
+      "GSoC",
+      "LFX",
+      "OpenSource",
+      "Mentorship",
+      "Students"
+    ],
+    "upvotes": 312,
+    "upvotedBy": [],
+    "views": 2150,
+    "bookmarksCount": 95,
+    "bookmarkedBy": [],
+    "reportsCount": 0,
+    "aiSummary": "Overview of premier student open source programs including GSoC, LFX Mentorship, and MLH Fellowship. Key recommendation is early community engagement on good-first-issues.",
+    "comments": [],
+    "createdAt": "2026-10-04T06:49:38.283Z",
+    "updatedAt": "2026-10-04T06:49:38.283Z"
+  },
+  {
+    "_id": "id-1791096578290-tx9xnd1ge",
+    "title": "Graph Traversal Traps: When Dijkstra Fails and BFS is Sufficient",
+    "content": "A recurring mistake in online assessments and contests is applying Dijkstra on unweighted or unit-weight graphs.\n1. **Unit Weight**: Always use standard BFS with an ordinary Queue. O(V + E) beats O((V + E) log V) and avoids priority queue overhead.\n2. **0-1 Weights**: Use 0-1 BFS with a deque (`std::deque` or two pointers). Push 0-weight edges to the front, 1-weight edges to the back. Strict O(V + E) runtime!\n3. **Negative Weights**: Dijkstra will give wrong answers or enter infinite cycles. Use Bellman-Ford or SPFA.",
+    "author": {
+      "name": "Rohan Mehta",
+      "email": "rohan@example.com",
+      "college": "NIT Trichy"
+    },
+    "category": "DSA",
+    "company": "General",
+    "tags": [
+      "Graphs",
+      "Dijkstra",
+      "BFS",
+      "01BFS",
+      "Optimization"
+    ],
+    "upvotes": 189,
+    "upvotedBy": [],
+    "views": 980,
+    "bookmarksCount": 42,
+    "bookmarkedBy": [],
+    "reportsCount": 0,
+    "aiSummary": "Algorithmic performance guidelines for shortest path problems: use 0-1 BFS with a double-ended queue for 0/1 graphs, standard BFS for unit weights, and avoid Dijkstra on negative edges.",
+    "comments": [],
+    "createdAt": "2026-10-04T06:49:38.290Z",
+    "updatedAt": "2026-10-04T06:49:38.290Z"
+  }
+]

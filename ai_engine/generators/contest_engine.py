@@ -5,7 +5,7 @@ def get_dsa_contest() -> Dict[str, Any]:
     """Generates a competitive 90-minute 4-problem algorithmic contest."""
     return {
         "id": "contest-dsa-weekly",
-        "title": "HierPrep Bi-Weekly Algorithmic Clash",
+        "title": "DUPILIO Bi-Weekly Algorithmic Clash",
         "type": "dsa",
         "durationMinutes": 90,
         "difficulty": "Tier 1 Competitive",

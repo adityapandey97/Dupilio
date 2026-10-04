@@ -65,5 +65,71 @@
     "completedAt": "2026-10-02T09:56:37.289Z",
     "createdAt": "2026-10-02T09:56:37.296Z",
     "updatedAt": "2026-10-02T09:56:37.296Z"
+  },
+  {
+    "_id": "id-1791098721783-kf07wa6o3",
+    "userId": "guest-preview",
+    "title": "Solve 3 Dynamic Programming problems (Coin Change & LIS)",
+    "description": "Focus on identifying optimal substructure and state formulation.",
+    "priority": "high",
+    "dueDate": "2026-10-05T07:25:21.780Z",
+    "category": "DSA",
+    "tags": [
+      "DP",
+      "Placement",
+      "Medium"
+    ],
+    "isCompleted": false,
+    "createdAt": "2026-10-04T07:25:21.783Z",
+    "updatedAt": "2026-10-04T07:25:21.783Z"
+  },
+  {
+    "_id": "id-1791098721790-i3npgd1ow",
+    "userId": "guest-preview",
+    "title": "Register & participate in Codeforces Round 976",
+    "description": "Solve first 3 problems within 45 minutes.",
+    "priority": "urgent",
+    "dueDate": "2026-10-06T07:25:21.781Z",
+    "category": "Competitive Programming",
+    "tags": [
+      "Contest",
+      "Codeforces"
+    ],
+    "isCompleted": false,
+    "createdAt": "2026-10-04T07:25:21.790Z",
+    "updatedAt": "2026-10-04T07:25:21.790Z"
+  },
+  {
+    "_id": "id-1791098721793-ceoes2c1h",
+    "userId": "guest-preview",
+    "title": "Review Operating System Virtual Memory & Paging",
+    "description": "Understand TLB hit/miss and Page Replacement Algorithms (LRU, FIFO).",
+    "priority": "medium",
+    "dueDate": "2026-10-07T07:25:21.781Z",
+    "category": "OS",
+    "tags": [
+      "CoreCS",
+      "Revision"
+    ],
+    "isCompleted": false,
+    "createdAt": "2026-10-04T07:25:21.793Z",
+    "updatedAt": "2026-10-04T07:25:21.793Z"
+  },
+  {
+    "_id": "id-1791098721802-c5gnd2eu1",
+    "userId": "guest-preview",
+    "title": "Push Dupilio portfolio updates to GitHub repository",
+    "description": "Document architecture and update project README.",
+    "priority": "low",
+    "dueDate": "2026-10-08T07:25:21.781Z",
+    "category": "GitHub",
+    "tags": [
+      "OpenSource",
+      "Portfolio"
+    ],
+    "isCompleted": true,
+    "completedAt": "2026-10-04T07:25:21.781Z",
+    "createdAt": "2026-10-04T07:25:21.802Z",
+    "updatedAt": "2026-10-04T07:25:21.802Z"
   }
 ]
