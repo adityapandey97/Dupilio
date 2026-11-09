@@ -8,6 +8,7 @@ export const User = createModel('User', {
   college: { type: String, default: 'National Institute of Technology' },
   department: { type: String, default: 'Computer Science & Engineering' },
   batch: { type: String, default: '2026' },
+  country: { type: String, default: 'India' },
   bio: { type: String, default: 'Passionate developer & competitive programmer.' },
   privacySettings: {
     profileVisibility: { type: String, enum: ['public', 'college', 'private'], default: 'public' },

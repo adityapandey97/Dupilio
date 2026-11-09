@@ -43,15 +43,15 @@ export const Sidebar = ({ isOpen, onClose }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Strict 7 primary items as specified in DUPILIO Architecture Section 8
+  // HierPrep Core Navigation Items
   const primaryMenuItems = [
-    { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={18} /> },
-    { name: 'Profiles & Analytics', path: '/profiles', icon: <BarChart3 size={18} /> },
-    { name: 'Contests & Problems', path: '/contests', icon: <Swords size={18} /> },
-    { name: 'Hackathons & Events', path: '/events', icon: <Sparkles size={18} /> },
-    { name: 'Resume → Jobs & Internships', path: '/career', icon: <Briefcase size={18} /> },
-    { name: 'AI Preparation', path: '/preparation', icon: <Target size={18} /> },
-    { name: 'Discuss & Chat', path: '/discussions', icon: <MessageSquare size={18} /> }
+    { name: 'Dashboard & Profile', path: '/dashboard', icon: <LayoutDashboard size={18} /> },
+    { name: 'Contests & Reminders', path: '/contests', icon: <Swords size={18} /> },
+    { name: 'Events & Hackathons', path: '/events', icon: <Sparkles size={18} /> },
+    { name: 'AI Self-Test & Contests', path: '/preparation', icon: <Target size={18} /> },
+    { name: 'Tech Discussions', path: '/discussions', icon: <MessageSquare size={18} /> },
+    { name: 'Platform Profiles Sync', path: '/profiles', icon: <BarChart3 size={18} /> },
+    { name: 'Jobs & Internships', path: '/career', icon: <Briefcase size={18} /> }
   ];
 
   const linkStyle = ({ isActive }) => {
@@ -217,7 +217,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
               <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <HelpCircle size={18} className="text-indigo-600" />
-                DUPILIO Help & Guidance
+                HierPrep Developer Manual
               </h3>
               <button
                 onClick={() => setShowHelpModal(false)}
@@ -228,7 +228,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
             </div>
             <div className="py-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
               <p>
-                <strong>DUPILIO</strong> is a unified developer platform connecting your real competitive programming, GitHub, resume, and hackathon milestones.
+                <strong>HierPrep</strong> is a high-performance developer ecosystem unifying competitive programming telemetry, contest reminders, hackathons, and AI-driven self-test contests.
               </p>
               <div className="rounded-xl bg-slate-50 dark:bg-slate-950/60 p-3 border border-slate-200/60 dark:border-slate-800/60 space-y-2">
                 <p className="font-semibold text-slate-900 dark:text-white">Quick Tips:</p>

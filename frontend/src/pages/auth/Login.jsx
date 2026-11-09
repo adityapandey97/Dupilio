@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
+import HierPrepLogo from '../../components/common/HierPrepLogo';
 import { Mail, Lock, ShieldCheck } from 'lucide-react';
 
 const loginSchema = z.object({
@@ -51,16 +52,17 @@ export const Login = () => {
     <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12 dark:bg-slate-950 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <div className="flex flex-col items-center justify-center text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 font-extrabold text-white shadow-lg shadow-indigo-500/30 text-lg">
-            DP
-          </div>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Welcome back to Dupilio
+          <HierPrepLogo size="lg" showText={true} />
+          <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900 dark:text-white">
+            Sign In to HierPrep
           </h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Or{' '}
-            <Link to="/register" className="font-semibold text-purple-600 hover:text-purple-500 dark:text-purple-400">
-              create a new account
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Access your unified developer profile, contest alarms, and AI self-test arena.
+          </p>
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+            Don't have an account?{' '}
+            <Link to="/register" className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400">
+              Create a new account
             </Link>
           </p>
         </div>

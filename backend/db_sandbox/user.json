@@ -1,9 +1,13 @@
 [
   {
-    "_id": "id-1786994417096-uyln9d2n3",
-    "name": "ADITYA PANDEY",
+    "_id": "guest-preview",
+    "name": "Aditya Pandey",
     "email": "honeypandey409@gmail.com",
     "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "college": "National Institute of Technology",
+    "department": "Computer Science & Engineering",
+    "batch": "2026",
+    "country": "India",
     "profile": {
       "role": "Software Engineer",
       "skills": [
@@ -13,127 +17,190 @@
         "Node.js",
         "MongoDB"
       ],
-      "education": "B.Tech IT - NIET",
-      "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating",
+      "education": "B.Tech CSE - NIT",
+      "achievements": "Solved 480+ LeetCode problems, Codeforces 1670 max rating",
       "codingProfiles": {
-        "leetcode": "aditypandey088",
-        "codeforces": "",
-        "codechef": "",
-        "hackerrank": "",
-        "github": ""
+        "leetcode": "adityapandey088",
+        "codeforces": "adityapandey088",
+        "codechef": "adityapandey088",
+        "github": "adityapandey97"
       },
       "codingStats": {
-        "leetcodeSolved": 128,
-        "codeforcesSolved": 0,
-        "codechefSolved": 0,
-        "hackerrankSolved": 0,
-        "completedTopics": []
+        "leetcodeSolved": 483,
+        "codeforcesSolved": 215,
+        "codeforcesRating": 1670,
+        "codechefSolved": 142,
+        "hackerrankSolved": 95
       }
     },
-    "createdAt": "2026-08-17T19:20:17.096Z",
-    "updatedAt": "2026-10-02T18:30:00.885Z",
     "developerScore": {
       "label": "Dupilio Developer Score",
-      "overall": 42,
+      "overall": 61,
       "dimensions": {
-        "problemSolving": 62,
-        "competitiveProgramming": 20,
-        "consistency": 40,
-        "contestParticipation": 45,
-        "gitHubActivity": 30,
-        "projectActivity": 50
+        "problemSolving": 100,
+        "competitiveProgramming": 47,
+        "contestParticipation": 100,
+        "consistency": 0,
+        "githubActivity": 34,
+        "projectActivity": 61
       },
-      "metricsSummary": {
-        "totalSolved": 218,
-        "maxRating": 0,
-        "totalContests": 0,
-        "currentStreak": 12,
-        "githubStars": 0
-      },
-      "calculatedAt": "2026-10-02T18:30:00.885Z"
+      "calculatedAt": "2026-11-09T08:18:46.021Z"
+    },
+    "updatedAt": "2026-11-09T08:18:46.022Z",
+    "profile.codingStats.codeforcesRating": 1740,
+    "developerScore.overall": 79
+  },
+  {
+    "_id": "user-aravind",
+    "name": "Aravind Subramanian",
+    "email": "aravind@iitm.ac.in",
+    "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "college": "IIT Madras",
+    "department": "Computer Science & Engineering",
+    "batch": "2026",
+    "country": "India",
+    "profile": {
+      "role": "Competitive Programmer & Systems Engineer",
+      "skills": [
+        "C++",
+        "Algorithms",
+        "Distributed Systems"
+      ],
+      "education": "B.Tech CSE - IIT Madras",
+      "codingStats": {
+        "leetcodeSolved": 1120,
+        "codeforcesRating": 2180
+      }
+    },
+    "developerScore": {
+      "overall": 94,
+      "dimensions": {
+        "problemSolving": 96,
+        "competitiveProgramming": 95,
+        "consistency": 90
+      }
     }
   },
   {
-    "_id": "id-1787822539885-zan999zjz",
-    "name": "Aditya Pandey",
-    "email": "aditya@example.com",
-    "password": "$2b$10$qEGOO9Lkkf4frk00worhIOcfCr4PRGmamRrAJ850XPHidt5e0aLB6",
+    "_id": "user-elena",
+    "name": "Elena Rostova",
+    "email": "elena@stanford.edu",
+    "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "college": "Stanford University",
+    "department": "Computer Science",
+    "batch": "2026",
+    "country": "United States",
     "profile": {
-      "role": "Software Engineer",
+      "role": "AI Researcher & Software Engineer",
       "skills": [
-        "React",
-        "JavaScript",
-        "C++",
-        "Node.js",
-        "MongoDB"
+        "Python",
+        "PyTorch",
+        "C++"
       ],
-      "education": "B.Tech IT - NIET",
-      "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating"
+      "education": "B.S. CS - Stanford",
+      "codingStats": {
+        "leetcodeSolved": 980,
+        "codeforcesRating": 2110
+      }
     },
-    "createdAt": "2026-08-27T09:22:19.885Z",
-    "updatedAt": "2026-10-04T06:33:08.538Z",
     "developerScore": {
-      "label": "Dupilio Developer Score",
-      "overall": 2,
+      "overall": 92,
       "dimensions": {
-        "problemSolving": 0,
-        "competitiveProgramming": 0,
-        "contestParticipation": 0,
-        "consistency": 0,
-        "githubActivity": 0,
-        "projectActivity": 20
-      },
-      "calculatedAt": "2026-10-04T06:33:08.536Z"
-    },
-    "profile.codingProfiles": {
-      "leetcode": "adityapandey088"
+        "problemSolving": 94,
+        "competitiveProgramming": 90,
+        "consistency": 92
+      }
     }
   },
   {
-    "_id": "id-1787825847137-yszn0wibh",
-    "name": "Dev Judge",
-    "email": "devjudge@example.com",
-    "password": "$2b$10$43zlH5Qz6txLeeDpUUdBpuhO5Mwu05bmDZLwm.mphtp8HvrzD35qu",
+    "_id": "user-aman-nit",
+    "name": "Aman Verma",
+    "email": "aman@nit.edu",
+    "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "college": "National Institute of Technology",
+    "department": "Information Technology",
+    "batch": "2026",
+    "country": "India",
     "profile": {
-      "role": "Software Engineer",
+      "role": "Full Stack Developer",
       "skills": [
         "React",
-        "JavaScript",
-        "C++",
-        "Node.js",
-        "MongoDB"
+        "TypeScript",
+        "Go",
+        "Docker"
       ],
-      "education": "B.Tech IT - NIET",
-      "achievements": "Solved 250+ LeetCode problems, Codeforces 1450 max rating",
-      "codingProfiles": {
-        "leetcode": "dev_leetcode",
-        "codeforces": "",
-        "codechef": "",
-        "hackerrank": "",
-        "github": "dev_github"
-      },
       "codingStats": {
-        "leetcodeSolved": 0,
-        "codeforcesSolved": 0,
-        "codechefSolved": 0,
-        "hackerrankSolved": 0,
-        "completedTopics": []
+        "leetcodeSolved": 820,
+        "codeforcesRating": 1910
       }
     },
-    "createdAt": "2026-08-27T10:17:27.138Z",
-    "updatedAt": "2026-10-04T12:30:01.759Z",
     "developerScore": {
-      "label": "Dupilio Developer Score",
-      "overall": 0,
+      "overall": 88,
       "dimensions": {
-        "problemSolving": 0,
-        "competitiveProgramming": 0,
-        "contestParticipation": 0,
-        "consistency": 0,
-        "githubActivity": 0,
-        "projectActivity": 0
-      },
-      "calculatedAt": "2026-10-04T12:30:01.757Z"
+        "problemSolving": 88,
+        "competitiveProgramming": 85,
+        "consistency": 91
+      }
+    }
+  },
+  {
+    "_id": "user-lukas",
+    "name": "Lukas Schneider",
+    "email": "lukas@tum.de",
+    "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "college": "TU Munich",
+    "department": "Informatics",
+    "batch": "2026",
+    "country": "Germany",
+    "profile": {
+      "role": "Cloud Architect",
+      "skills": [
+        "Rust",
+        "Kubernetes",
+        "Linux"
+      ],
+      "codingStats": {
+        "leetcodeSolved": 840,
+        "codeforcesRating": 1980
+      }
+    },
+    "developerScore": {
+      "overall": 87,
+      "dimensions": {
+        "problemSolving": 86,
+        "competitiveProgramming": 88,
+        "consistency": 87
+      }
+    }
+  },
+  {
+    "_id": "user-sanya-nit",
+    "name": "Sanya Gupta",
+    "email": "sanya@nit.edu",
+    "password": "$2b$10$q2b733Q9Tds58QSSGQxu6uVsVBnHo2EUt9MlB5q7101gbXYC/AkzW",
+    "college": "National Institute of Technology",
+    "department": "Computer Science & Engineering",
+    "batch": "2026",
+    "country": "India",
+    "profile": {
+      "role": "Algorithm Developer",
+      "skills": [
+        "C++",
+        "Java",
+        "DSA"
+      ],
+      "codingStats": {
+        "leetcodeSolved": 710,
+        "codeforcesRating": 1820
+      }
+    },
+    "developerScore": {
+      "overall": 82,
+      "dimensions": {
+        "problemSolving": 84,
+        "competitiveProgramming": 80,
+        "consistency": 82
+      }
     }
   }
 ]

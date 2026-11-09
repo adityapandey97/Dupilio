@@ -27,7 +27,7 @@ export const DashboardLayout = () => {
           <div className="flex items-center gap-2 max-w-7xl mx-auto w-full justify-between">
             <span className="flex items-center gap-2 text-left">
               <Sparkles size={14} className="animate-pulse shrink-0" />
-              <span>You are viewing <strong>DUPILIO</strong> in <strong>Preview Mode</strong>. Explore developer profiles, contest tracking, hackathons, and AI preparation freely.</span>
+              <span>Welcome to <strong>HierPrep</strong>! Live multi-platform developer profiles, upcoming contest alarms, hackathons, and AI self-test contests are active.</span>
             </span>
             <div className="flex items-center gap-2 shrink-0">
               <Link to="/login" className="px-2.5 py-1 bg-white/20 hover:bg-white/30 rounded-md transition-colors font-medium">

@@ -6,11 +6,12 @@ const AuthContext = createContext();
 const GUEST_USER = {
   id: 'guest-preview',
   name: 'Developer',
-  email: 'developer@dupilio.dev',
+  email: 'developer@hierprep.dev',
   isGuest: true,
   college: 'National Institute of Technology',
   department: 'Computer Science & Engineering',
   batch: '2026',
+  country: 'India',
   bio: 'Connect coding handles to sync real-time ratings, problems solved, and contest calendars.',
   privacySettings: {
     profileVisibility: 'public',

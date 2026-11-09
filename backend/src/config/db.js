@@ -1,8 +1,16 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 
-const sandboxDir = path.join(process.cwd(), 'db_sandbox');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const potentialDirs = [
+  path.join(__dirname, '../../db_sandbox'),
+  path.join(process.cwd(), 'backend', 'db_sandbox'),
+  path.join(process.cwd(), 'db_sandbox')
+];
+const sandboxDir = potentialDirs.find(d => fs.existsSync(d)) || potentialDirs[0];
 
 // Ensure database sandbox directory exists
 if (!fs.existsSync(sandboxDir)) {
@@ -10,6 +18,7 @@ if (!fs.existsSync(sandboxDir)) {
 }
 
 export let useSandboxDB = false;
+export const isSandboxActive = () => useSandboxDB || mongoose.connection.readyState !== 1;
 
 export const connectDB = async () => {
   const uri = process.env.MONGODB_URI;
@@ -57,7 +66,7 @@ export const createModel = (name, schemaDefinition) => {
 
   return {
     find: (query = {}) => {
-      if (!useSandboxDB) {
+      if (!isSandboxActive()) {
         return MongooseModel.find(query).lean();
       }
 
@@ -114,7 +123,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     findOne: async (query = {}) => {
-      if (!useSandboxDB) return MongooseModel.findOne(query).lean();
+      if (!isSandboxActive()) return MongooseModel.findOne(query).lean();
       
       let items = readSandbox();
       return items.find(item => {
@@ -130,14 +139,14 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     findById: async (id) => {
-      if (!useSandboxDB) return MongooseModel.findById(id).lean();
+      if (!isSandboxActive()) return MongooseModel.findById(id).lean();
       
       let items = readSandbox();
       return items.find(item => item._id === id || String(item._id) === String(id)) || null;
     },
 
     create: async (data) => {
-      if (!useSandboxDB) {
+      if (!isSandboxActive()) {
         const doc = await MongooseModel.create(data);
         return doc.toObject();
       }
@@ -155,7 +164,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     insertMany: async (docs = []) => {
-      if (!useSandboxDB) {
+      if (!isSandboxActive()) {
         return MongooseModel.insertMany(docs);
       }
       let items = readSandbox();
@@ -171,7 +180,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     findByIdAndUpdate: async (id, update, options = { new: true }) => {
-      if (!useSandboxDB) return MongooseModel.findByIdAndUpdate(id, update, options).lean();
+      if (!isSandboxActive()) return MongooseModel.findByIdAndUpdate(id, update, options).lean();
       
       let items = readSandbox();
       let idx = items.findIndex(item => item._id === id || String(item._id) === String(id));
@@ -192,7 +201,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     findOneAndUpdate: async (query, update, options = { new: true, upsert: false }) => {
-      if (!useSandboxDB) return MongooseModel.findOneAndUpdate(query, update, options).lean();
+      if (!isSandboxActive()) return MongooseModel.findOneAndUpdate(query, update, options).lean();
 
       let items = readSandbox();
       let idx = items.findIndex(item => {
@@ -235,7 +244,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     updateMany: async (query, update) => {
-      if (!useSandboxDB) return MongooseModel.updateMany(query, update);
+      if (!isSandboxActive()) return MongooseModel.updateMany(query, update);
 
       let items = readSandbox();
       let count = 0;
@@ -262,7 +271,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     findByIdAndDelete: async (id) => {
-      if (!useSandboxDB) return MongooseModel.findByIdAndDelete(id).lean();
+      if (!isSandboxActive()) return MongooseModel.findByIdAndDelete(id).lean();
       
       let items = readSandbox();
       let item = items.find(item => item._id === id || String(item._id) === String(id));
@@ -274,7 +283,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     deleteOne: async (query = {}) => {
-      if (!useSandboxDB) return MongooseModel.deleteOne(query);
+      if (!isSandboxActive()) return MongooseModel.deleteOne(query);
       
       let items = readSandbox();
       let idx = items.findIndex(item => {
@@ -291,7 +300,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     deleteMany: async (query = {}) => {
-      if (!useSandboxDB) return MongooseModel.deleteMany(query);
+      if (!isSandboxActive()) return MongooseModel.deleteMany(query);
 
       let items = readSandbox();
       let originalLength = items.length;
@@ -307,7 +316,7 @@ export const createModel = (name, schemaDefinition) => {
     },
 
     countDocuments: async (query = {}) => {
-      if (!useSandboxDB) return MongooseModel.countDocuments(query);
+      if (!isSandboxActive()) return MongooseModel.countDocuments(query);
       let items = readSandbox();
       if (Object.keys(query).length === 0) return items.length;
       return items.filter(item => {

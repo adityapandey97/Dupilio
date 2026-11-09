@@ -350,5 +350,17 @@
     },
     "createdAt": "2026-10-04T20:07:08.212Z",
     "updatedAt": "2026-10-04T20:07:08.212Z"
+  },
+  {
+    "_id": "id-1794212335859-isea07yb3",
+    "jobType": "CONTEST_INGESTION",
+    "status": "SUCCESS",
+    "details": {
+      "totalSynchronized": 11,
+      "startedAt": "2026-11-09T08:18:40.743Z",
+      "completedAt": "2026-11-09T08:18:55.857Z"
+    },
+    "createdAt": "2026-11-09T08:18:55.859Z",
+    "updatedAt": "2026-11-09T08:18:55.859Z"
   }
 ]

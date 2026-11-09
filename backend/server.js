@@ -78,7 +78,7 @@ mountRoutes('/api');
 
 // Healthcheck
 app.get('/health', (req, res) => {
-  res.json({ status: 'ok', service: 'Dupilio Core API', time: new Date() });
+  res.json({ status: 'ok', service: 'HierPrep Core API', time: new Date() });
 });
 
 // Centralized error handler
@@ -108,7 +108,7 @@ const startServer = async () => {
   initSyncCron();
   
   server.listen(PORT, () => {
-    console.log(`🚀 DUPILIO API Server is running on port ${PORT}`);
+    console.log(`🚀 HierPrep API Server is running on port ${PORT}`);
   });
 };
 

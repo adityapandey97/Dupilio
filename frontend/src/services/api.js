@@ -278,6 +278,32 @@ export const api = {
     return res.data;
   },
 
+  // Section 4: AI Functional Self-Test & Contest Arena
+  getSelfTestContestProblems: async () => {
+    const res = await client.get('/ai/self-test/contest-problems');
+    return res.data;
+  },
+
+  evaluateSelfTestCode: async (problemId, code, language) => {
+    const res = await client.post('/ai/self-test/evaluate-code', { problemId, code, language });
+    return res.data;
+  },
+
+  submitSelfTestContest: async (data) => {
+    const res = await client.post('/ai/self-test/submit-contest', data);
+    return res.data;
+  },
+
+  getSelfTestMcq: async (track = 'core_cs', count = 10) => {
+    const res = await client.get(`/ai/self-test/mcq?track=${track}&count=${count}`);
+    return res.data;
+  },
+
+  evaluateSelfTestMcq: async (track, answers) => {
+    const res = await client.post('/ai/self-test/evaluate-mcq', { track, answers });
+    return res.data;
+  },
+
   // Career & Opportunities endpoints
   getOpportunities: async (params = {}) => {
     const query = new URLSearchParams(params).toString();

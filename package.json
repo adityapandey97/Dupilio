@@ -1,13 +1,14 @@
 {
-  "name": "dupilio-platform",
+  "name": "hierprep-platform",
   "version": "2.0.0",
-  "description": "DUPILIO - Unified developer profile, competitive programming, hackathons, preparation, and developer community platform",
+  "description": "HierPrep - Unified Developer Ecosystem, Competitive Programming Telemetry, Contest Reminders & Alarms, Hackathons, and AI Self-Test Preparation Arena",
   "main": "index.js",
   "scripts": {
     "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend",
     "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run start --prefix backend\"",
     "build-frontend": "npm run build --prefix frontend",
-    "start-backend": "npm run start --prefix backend"
+    "start-backend": "npm run start --prefix backend",
+    "test": "npm test --prefix backend"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

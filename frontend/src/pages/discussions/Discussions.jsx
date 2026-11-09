@@ -187,18 +187,17 @@ export const Discussions = () => {
   return (
     <div className="space-y-6 animate-fade-in text-left">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-5 dark:border-slate-800/80">
         <div>
-          <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white shadow-md shadow-sky-500/20">
-              <MessageSquare size={24} />
-            </div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-              Community Discussions
-            </h1>
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200/60 dark:border-indigo-800/60 text-[11px] font-bold text-indigo-700 dark:text-indigo-300 mb-2">
+            <MessageSquare size={12} />
+            Section 5 • HierPrep Tech Discussions & Community
           </div>
-          <p className="text-slate-500 dark:text-slate-400 mt-1.5 text-sm">
-            Share competitive programming techniques, open source grants, and algorithm strategies.
+          <h1 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+            Developer Discussions & Experience Hub
+          </h1>
+          <p className="text-slate-500 dark:text-slate-400 mt-1 text-xs max-w-2xl">
+            Peer-reviewed engineering discussions, company interview experiences, algorithmic trade-offs, and hackathon ideation.
           </p>
         </div>
 

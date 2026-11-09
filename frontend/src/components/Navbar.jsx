@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import GlobalSearch from './common/GlobalSearch';
 import NotificationCenter from './common/NotificationCenter';
+import HierPrepLogo from './common/HierPrepLogo';
 
 export const Navbar = ({ onMenuToggle }) => {
   const { user, logout } = useAuth();
@@ -87,7 +88,7 @@ export const Navbar = ({ onMenuToggle }) => {
     <>
       <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/90 transition-colors duration-200">
         <div className="flex h-16 items-center justify-between px-4 sm:px-6">
-          
+
           {/* Left: Mobile trigger & Page Title + Breadcrumbs */}
           <div className="flex items-center gap-3">
             <button
@@ -98,21 +99,22 @@ export const Navbar = ({ onMenuToggle }) => {
               <Menu size={20} />
             </button>
 
-            {/* Brand icon for mobile */}
-            <Link to="/" className="lg:hidden flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 font-extrabold text-white text-xs shadow-md">
-                D
-              </div>
+            {/* HierPrep Brand Logo */}
+            <Link to="/" className="flex items-center gap-2">
+              <HierPrepLogo size="sm" showText={false} className="sm:hidden" />
+              <HierPrepLogo size="sm" showText={true} className="hidden sm:inline-flex" />
             </Link>
 
-            {/* Dynamic Page Header & Breadcrumbs (Section 10) */}
-            <div className="hidden sm:flex flex-col text-left">
+            <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 mx-1 hidden sm:block"></div>
+
+            {/* Dynamic Page Header & Breadcrumbs */}
+            <div className="hidden md:flex flex-col text-left">
               <div className="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
-                <span>DUPILIO</span>
+                <span>HierPrep</span>
                 <ChevronRight size={10} />
                 <span className="text-slate-600 dark:text-slate-300">{crumb}</span>
               </div>
-              <h1 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+              <h1 className="text-xs font-bold text-slate-900 dark:text-white leading-tight">
                 {title}
               </h1>
             </div>
@@ -136,7 +138,7 @@ export const Navbar = ({ onMenuToggle }) => {
 
           {/* Right Action Cluster */}
           <div className="flex items-center gap-2 sm:gap-3">
-            
+
             {/* Section 11: Real Data Freshness UX */}
             <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-[11px] font-medium text-slate-500 dark:text-slate-400">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
